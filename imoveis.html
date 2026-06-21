@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imóveis | Sol Magazine</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">Sol<span>Magazine</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="presenca-nacional.html">Presença Nacional</a></li>
+          <li><a href="expansao.html">Expansão</a></li>
+          <li><a href="imoveis.html">Imóveis</a></li>
+          <li><a href="fornecedores.html">Fornecedores</a></li>
+          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="contato.html" class="nav-cta">Fale Conosco</a>
+      <button class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="background-image:url('https://placehold.co/1600x900/3a2424/3a2424');">
+      <div class="hero-content">
+        <span class="eyebrow">Imóveis</span>
+        <h1>Indique um imóvel para a próxima loja Sol Magazine</h1>
+        <p>Ajude a Sol Magazine a chegar a novas regiões indicando pontos comerciais estratégicos.</p>
+        <div class="hero-actions">
+          <a href="#formulario" class="btn btn-primary">Indicar imóvel</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Por que Indicar um Imóvel</span>
+          <h2>Sua indicação pode abrir a próxima unidade da rede</h2>
+        </div>
+        <div class="grid grid-3">
+          <div class="card"><div class="card-icon">01</div><h3>Rede em expansão</h3><p>A Sol Magazine busca constantemente novos pontos comerciais.</p></div>
+          <div class="card"><div class="card-icon">02</div><h3>Processo transparente</h3><p>Análise técnica e retorno claro sobre a viabilidade do imóvel.</p></div>
+          <div class="card"><div class="card-icon">03</div><h3>Parceria de longo prazo</h3><p>Relação comercial estável com uma rede nacional consolidada.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tinted">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Perfil do Imóvel Desejado</span>
+          <h2>O que buscamos em um novo ponto comercial</h2>
+        </div>
+        <div class="grid grid-4">
+          <div class="card"><h3>Localização</h3><p>Áreas de fluxo comercial e fácil acesso.</p></div>
+          <div class="card"><h3>Metragem</h3><p>Espaço compatível com o modelo de loja padrão.</p></div>
+          <div class="card"><h3>Estrutura</h3><p>Condições adequadas para adaptação rápida.</p></div>
+          <div class="card"><h3>Documentação</h3><p>Situação regular do imóvel e do proprietário.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <div class="section-head left">
+          <span class="section-eyebrow">Processo</span>
+          <h2>Como funciona a indicação</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div><h3>Envio da indicação</h3><p>Preencha o formulário com as informações do imóvel.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3>Análise inicial</h3><p>Nosso time avalia localização e estrutura básica.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3>Visita técnica</h3><p>Avaliação presencial, quando aplicável.</p></div></div>
+          <div class="step"><div class="step-num">4</div><div><h3>Retorno e negociação</h3><p>Em caso de viabilidade, seguimos para a negociação.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tinted" id="formulario">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Formulário</span>
+          <h2>Indique seu imóvel</h2>
+        </div>
+        <div class="form-card" style="max-width:760px; margin:0 auto;">
+          <form data-prototype-form>
+            <div class="form-grid">
+              <div class="form-field"><label>Nome completo</label><input type="text" required></div>
+              <div class="form-field"><label>Telefone</label><input type="tel" required></div>
+              <div class="form-field"><label>E-mail</label><input type="email" required></div>
+              <div class="form-field"><label>Estado</label>
+                <select>
+                  <option>BA</option><option>CE</option><option>GO</option><option>MA</option>
+                  <option>MG</option><option>MS</option><option>MT</option><option>PA</option>
+                  <option>PE</option><option>PI</option><option>PR</option><option>RO</option>
+                  <option>SP</option><option>TO</option>
+                </select>
+              </div>
+              <div class="form-field"><label>Cidade</label><input type="text"></div>
+              <div class="form-field"><label>Metragem aproximada (m²)</label><input type="text"></div>
+              <div class="form-field full"><label>Endereço do imóvel</label><input type="text"></div>
+              <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-32">Enviar indicação</button>
+            <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
+          </form>
+          <div class="form-success">Indicação enviada com sucesso. Nosso time entrará em contato em breve.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="container">
+        <div class="cta-perfil-grid">
+          <div class="cta-perfil">
+            <span class="badge">Investidor</span>
+            <h4>Expansão e Investimento</h4>
+            <p>Quero conhecer o modelo de expansão.</p>
+            <a href="expansao.html" class="btn btn-primary">Saiba mais</a>
+          </div>
+          <div class="cta-perfil">
+            <span class="badge">Fornecedor</span>
+            <h4>Fornecedores</h4>
+            <p>Quero homologar minha empresa.</p>
+            <a href="fornecedores.html" class="btn btn-primary">Ser fornecedor</a>
+          </div>
+          <div class="cta-perfil">
+            <span class="badge">Candidato</span>
+            <h4>Trabalhe Conosco</h4>
+            <p>Quero fazer parte do time.</p>
+            <a href="trabalhe-conosco.html" class="btn btn-primary">Ver vagas</a>
+          </div>
+          <div class="cta-perfil">
+            <span class="badge">Geral</span>
+            <h4>Contato</h4>
+            <p>Quero falar com a Sol Magazine.</p>
+            <a href="contato.html" class="btn btn-primary">Fale conosco</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-credibility">
+      <div class="container">
+        <div class="stats-bar">
+          <div class="stat"><div class="stat-num">+100</div><div class="stat-label">Lojas em operação</div></div>
+          <div class="stat"><div class="stat-num">14</div><div class="stat-label">Estados atendidos</div></div>
+          <div class="stat"><div class="stat-num">+10</div><div class="stat-label">Anos de atuação</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-logo">Sol<span>Magazine</span></div>
+          <p class="footer-desc">Rede nacional de varejo popular, com operação padronizada e expansão contínua em todo o Brasil.</p>
+        </div>
+        <div>
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="presenca-nacional.html">Presença Nacional</a></li>
+            <li><a href="expansao.html">Projeto de Expansão</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Oportunidades</h4>
+          <ul>
+            <li><a href="imoveis.html">Imóveis</a></li>
+            <li><a href="fornecedores.html">Fornecedores</a></li>
+            <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li>contato@solmagazine.com.br <span class="placeholder-tag">placeholder</span></li>
+            <li>(00) 0000-0000 <span class="placeholder-tag">placeholder</span></li>
+            <li><a href="contato.html">Ver todos os canais</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Sol Magazine. Todos os direitos reservados.</span>
+      <span>CNPJ: 00.000.000/0000-00 <span class="placeholder-tag">placeholder</span></span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
