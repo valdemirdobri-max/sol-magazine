@@ -419,6 +419,22 @@ section { padding: 72px 0; }
 }
 @media (max-width: 920px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
 
+/* ===== CHECKLIST (PERFIL) ===== */
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 920px) { .checklist-grid { grid-template-columns: 1fr; } }
+.checklist-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.checklist-item { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--texto); }
+.checklist-item .icon-check, .checklist-item .icon-cross {
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.checklist-item .icon-check { background: #eafaf0; color: #1d6b3c; }
+.checklist-item .icon-cross { background: #fdeaea; color: var(--vermelho-escuro); }
+
 /* ===== MAP ===== */
 .map-wrap {
   background: #fff;

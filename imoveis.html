@@ -62,14 +62,22 @@
     <section class="section-tinted">
       <div class="container">
         <div class="section-head">
-          <span class="section-eyebrow">Perfil do Imóvel Desejado</span>
+          <span class="section-eyebrow">Perfil que atende</span>
           <h2>O que buscamos em um novo ponto comercial</h2>
         </div>
-        <div class="grid grid-4">
-          <div class="card"><h3>Localização</h3><p>Áreas de fluxo comercial e fácil acesso.</p></div>
-          <div class="card"><h3>Metragem</h3><p>Espaço compatível com o modelo de loja padrão.</p></div>
-          <div class="card"><h3>Estrutura</h3><p>Condições adequadas para adaptação rápida.</p></div>
-          <div class="card"><h3>Documentação</h3><p>Situação regular do imóvel e do proprietário.</p></div>
+        <div class="checklist-grid">
+          <ul class="checklist-list">
+            <li class="checklist-item"><span class="icon-check">✓</span><span>Térreo com acesso direto</span></li>
+            <li class="checklist-item"><span class="icon-check">✓</span><span>Área mínima compatível com o modelo de loja</span></li>
+            <li class="checklist-item"><span class="icon-check">✓</span><span>Alto fluxo de pessoas</span></li>
+            <li class="checklist-item"><span class="icon-check">✓</span><span>Boa visibilidade</span></li>
+            <li class="checklist-item"><span class="icon-check">✓</span><span>Estacionamento como diferencial desejável, não obrigatório</span></li>
+            <li class="checklist-item"><span class="icon-check">✓</span><span>Localização em região comercial</span></li>
+          </ul>
+          <ul class="checklist-list">
+            <li class="checklist-item"><span class="icon-cross">✗</span><span>Andares superiores sem acesso — não atende</span></li>
+            <li class="checklist-item"><span class="icon-cross">✗</span><span>Regiões com baixo fluxo — não atende</span></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -95,36 +103,54 @@
           <span class="section-eyebrow">Formulário</span>
           <h2>Indique seu imóvel</h2>
         </div>
-        <div class="form-card" style="max-width:760px; margin:0 auto;">
-          <form data-prototype-form>
-            <div class="form-grid">
-              <div class="form-field"><label>Nome completo</label><input type="text" required></div>
-              <div class="form-field"><label>Telefone</label><input type="tel" required></div>
-              <div class="form-field"><label>E-mail</label><input type="email" required></div>
-              <div class="form-field"><label>Estado</label>
-                <select>
-                  <option>BA</option><option>CE</option><option>GO</option><option>MA</option>
-                  <option>MG</option><option>MS</option><option>MT</option><option>PA</option>
-                  <option>PE</option><option>PI</option><option>PR</option><option>RO</option>
-                  <option>SP</option><option>TO</option>
-                </select>
-              </div>
-              <div class="form-field"><label>Cidade</label><input type="text"></div>
-              <div class="form-field"><label>Metragem aproximada (m²)</label><input type="text"></div>
-              <div class="form-field"><label>Possui estacionamento (diferencial, não obrigatório)</label>
-                <select>
-                  <option>Sim</option>
-                  <option>Não</option>
-                </select>
-              </div>
-              <div class="form-field full"><label>Endereço do imóvel</label><input type="text"></div>
-              <div class="form-field full"><label>Link Google Maps (opcional)</label><input type="url" placeholder="https://maps.google.com/..."></div>
-              <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
+        <div class="contato-layout">
+          <div>
+            <div class="form-card">
+              <form data-prototype-form>
+                <div class="form-grid">
+                  <div class="form-field"><label>Nome completo</label><input type="text" required></div>
+                  <div class="form-field"><label>Telefone</label><input type="tel" required></div>
+                  <div class="form-field"><label>E-mail</label><input type="email" required></div>
+                  <div class="form-field"><label>Estado</label>
+                    <select>
+                      <option>BA</option><option>CE</option><option>GO</option><option>MA</option>
+                      <option>MG</option><option>MS</option><option>MT</option><option>PA</option>
+                      <option>PE</option><option>PI</option><option>PR</option><option>RO</option>
+                      <option>SP</option><option>TO</option>
+                    </select>
+                  </div>
+                  <div class="form-field"><label>Cidade</label><input type="text"></div>
+                  <div class="form-field"><label>Metragem aproximada (m²)</label><input type="text"></div>
+                  <div class="form-field"><label>Possui estacionamento (diferencial, não obrigatório)</label>
+                    <select>
+                      <option>Sim</option>
+                      <option>Não</option>
+                    </select>
+                  </div>
+                  <div class="form-field full"><label>Endereço do imóvel</label><input type="text"></div>
+                  <div class="form-field full"><label>Link Google Maps (opcional)</label><input type="url" placeholder="https://maps.google.com/..."></div>
+                  <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-32">Enviar indicação</button>
+                <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
+              </form>
+              <div class="form-success">Indicação enviada com sucesso. Nosso time entrará em contato em breve.</div>
             </div>
-            <button type="submit" class="btn btn-primary mt-32">Enviar indicação</button>
-            <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
-          </form>
-          <div class="form-success">Indicação enviada com sucesso. Nosso time entrará em contato em breve.</div>
+          </div>
+          <aside>
+            <div class="sidebar-card">
+              <h4>O que analisamos em cada imóvel</h4>
+              <p>Localização, fluxo, metragem e documentação do imóvel.</p>
+            </div>
+            <div class="sidebar-card">
+              <h4>Prazo de retorno</h4>
+              <p>Nosso time retorna a análise inicial em até 5 dias úteis <span class="placeholder-tag">placeholder</span>.</p>
+            </div>
+            <div class="sidebar-card">
+              <h4>Dúvidas?</h4>
+              <p>imoveis@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
