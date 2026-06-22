@@ -16,10 +16,15 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="quem-somos.html">Quem Somos</a></li>
           <li><a href="presenca-nacional.html">Presença Nacional</a></li>
-          <li><a href="expansao.html">Expansão</a></li>
-          <li><a href="imoveis.html">Imóveis</a></li>
-          <li><a href="fornecedores.html">Fornecedores</a></li>
-          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="dropdown-toggle">Oportunidades</a>
+            <ul class="dropdown-menu">
+              <li><a href="expansao.html">Expansão</a></li>
+              <li><a href="imoveis.html">Imóveis</a></li>
+              <li><a href="fornecedores.html">Fornecedores</a></li>
+              <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+            </ul>
+          </li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
@@ -34,6 +39,11 @@
         <span class="eyebrow">Trabalhe Conosco</span>
         <h1>Cresça com a gente em uma rede que está em todo o Brasil</h1>
         <p>Conheça as oportunidades de carreira na Sol Magazine e candidate-se às nossas vagas.</p>
+        <div class="stats-bar" style="background:rgba(255,255,255,.08); margin-bottom:26px; padding:20px;">
+          <div class="stat"><div class="stat-num">+100</div><div class="stat-label">Lojas em operação</div></div>
+          <div class="stat"><div class="stat-num">14</div><div class="stat-label">Estados brasileiros</div></div>
+          <div class="stat"><div class="stat-num">+10</div><div class="stat-label">Anos de atuação</div></div>
+        </div>
         <div class="hero-actions">
           <a href="#formulario" class="btn btn-primary">Candidatar-se</a>
         </div>
@@ -77,8 +87,8 @@
             <p>Depoimento real a ser inserido na versão final. <span class="placeholder-tag">placeholder</span></p>
           </div>
           <div class="card">
-            <h3>Colaborador(a) <span class="placeholder-tag">placeholder</span></h3>
-            <p>Depoimento real a ser inserido na versão final. <span class="placeholder-tag">placeholder</span></p>
+            <h3>Colaborador(a)</h3>
+            <p>Comecei em uma função de loja e fui crescendo junto com a rede, assumindo novas responsabilidades a cada unidade que se abria. <span class="placeholder-tag">placeholder</span></p>
           </div>
           <div class="card">
             <h3>Colaborador(a) <span class="placeholder-tag">placeholder</span></h3>
@@ -115,7 +125,7 @@
               <div class="form-field"><label>Nome completo</label><input type="text" required></div>
               <div class="form-field"><label>Telefone</label><input type="tel" required></div>
               <div class="form-field"><label>E-mail</label><input type="email" required></div>
-              <div class="form-field"><label>Cidade / Estado</label><input type="text"></div>
+              <div class="form-field"><label>Cidade Atual</label><input type="text"></div>
               <div class="form-field"><label>Área de interesse</label>
                 <select>
                   <option>Loja</option>
@@ -124,7 +134,21 @@
                   <option>Expansão</option>
                 </select>
               </div>
+              <div class="form-field"><label>Disponibilidade para Mudança</label>
+                <select>
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+              </div>
+              <div class="form-field"><label>Disponibilidade para Início</label>
+                <select>
+                  <option>Imediata</option>
+                  <option>Em até 15 dias</option>
+                  <option>Em até 30 dias</option>
+                </select>
+              </div>
               <div class="form-field"><label>Currículo</label><input type="file"></div>
+              <div class="form-field full"><label>Experiência</label><textarea rows="3" placeholder="Resuma sua experiência profissional"></textarea></div>
               <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
             </div>
             <button type="submit" class="btn btn-primary mt-32">Enviar candidatura</button>

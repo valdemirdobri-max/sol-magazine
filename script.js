@@ -15,7 +15,21 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.nav-links a').forEach(function (link) {
     if (link.getAttribute('href') === current) {
       link.classList.add('active');
+      var parentDropdown = link.closest('.has-dropdown');
+      if (parentDropdown) {
+        parentDropdown.querySelector('.dropdown-toggle').classList.add('active');
+      }
     }
+  });
+
+  // Dropdown "Oportunidades"
+  document.querySelectorAll('.dropdown-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (window.matchMedia('(max-width: 920px)').matches) {
+        toggle.parentElement.classList.toggle('open');
+      }
+    });
   });
 
   // Fade-in ao rolar

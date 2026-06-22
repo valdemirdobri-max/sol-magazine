@@ -16,10 +16,15 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="quem-somos.html">Quem Somos</a></li>
           <li><a href="presenca-nacional.html">Presença Nacional</a></li>
-          <li><a href="expansao.html">Expansão</a></li>
-          <li><a href="imoveis.html">Imóveis</a></li>
-          <li><a href="fornecedores.html">Fornecedores</a></li>
-          <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+          <li class="has-dropdown">
+            <a href="#" class="dropdown-toggle">Oportunidades</a>
+            <ul class="dropdown-menu">
+              <li><a href="expansao.html">Expansão</a></li>
+              <li><a href="imoveis.html">Imóveis</a></li>
+              <li><a href="fornecedores.html">Fornecedores</a></li>
+              <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+            </ul>
+          </li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
@@ -106,7 +111,14 @@
               </div>
               <div class="form-field"><label>Cidade</label><input type="text"></div>
               <div class="form-field"><label>Metragem aproximada (m²)</label><input type="text"></div>
+              <div class="form-field"><label>Possui estacionamento (diferencial, não obrigatório)</label>
+                <select>
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+              </div>
               <div class="form-field full"><label>Endereço do imóvel</label><input type="text"></div>
+              <div class="form-field full"><label>Link Google Maps (opcional)</label><input type="url" placeholder="https://maps.google.com/..."></div>
               <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
             </div>
             <button type="submit" class="btn btn-primary mt-32">Enviar indicação</button>
