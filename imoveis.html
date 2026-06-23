@@ -121,15 +121,35 @@
                   </div>
                   <div class="form-field"><label>Cidade</label><input type="text"></div>
                   <div class="form-field"><label>Metragem aproximada (m²)</label><input type="text"></div>
+                  <div class="form-field"><label>Tipo de imóvel</label>
+                    <select required>
+                      <option value="">Selecione</option>
+                      <option>Térreo</option>
+                      <option>Sobreloja</option>
+                      <option>Loja em galeria/shopping</option>
+                      <option>Outro</option>
+                    </select>
+                  </div>
+                  <div class="form-field"><label>Valor pretendido (R$)</label><input type="text"></div>
+                  <div class="form-field"><label>Situação atual</label>
+                    <select required>
+                      <option value="">Selecione</option>
+                      <option>Disponível</option>
+                      <option>Ocupado</option>
+                      <option>Em reforma</option>
+                    </select>
+                  </div>
                   <div class="form-field"><label>Possui estacionamento (diferencial, não obrigatório)</label>
                     <select>
                       <option>Sim</option>
                       <option>Não</option>
                     </select>
                   </div>
-                  <div class="form-field full"><label>Endereço do imóvel</label><input type="text"></div>
+                  <div class="form-field"><label>Endereço do imóvel</label><input type="text"></div>
+                  <div class="form-field"><label>Bairro / Região</label><input type="text"></div>
                   <div class="form-field full"><label>Link Google Maps (opcional)</label><input type="url" placeholder="https://maps.google.com/..."></div>
                   <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
+                  <div class="form-field full"><label>Fotos — fachada, interior e entorno</label><input type="file" multiple accept="image/*"></div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-32">Enviar indicação</button>
                 <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>

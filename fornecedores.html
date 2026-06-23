@@ -118,8 +118,20 @@
                   <div class="form-field"><label>Nome da empresa</label><input type="text" required></div>
                   <div class="form-field"><label>CNPJ</label><input type="text" required></div>
                   <div class="form-field"><label>Responsável</label><input type="text" required></div>
+                  <div class="form-field"><label>Cargo</label><input type="text"></div>
                   <div class="form-field"><label>Telefone</label><input type="tel" required></div>
                   <div class="form-field"><label>E-mail</label><input type="email" required></div>
+                  <div class="form-field"><label>Cidade sede</label><input type="text"></div>
+                  <div class="form-field"><label>Estado sede</label>
+                    <select required>
+                      <option value="">Selecione</option>
+                      <option>BA</option><option>CE</option><option>GO</option><option>MA</option>
+                      <option>MG</option><option>MS</option><option>MT</option><option>PA</option>
+                      <option>PE</option><option>PI</option><option>PR</option><option>RO</option>
+                      <option>SP</option><option>TO</option>
+                    </select>
+                  </div>
+                  <div class="form-field full"><label>Site ou portfólio (opcional)</label><input type="url" placeholder="https://"></div>
                   <div class="form-field"><label>Categoria</label>
                     <select>
                       <option>Confecções e Moda Popular</option>
@@ -128,7 +140,17 @@
                       <option>Acessórios</option>
                     </select>
                   </div>
+                  <div class="form-field"><label>Capacidade mensal aproximada</label><input type="text"></div>
+                  <div class="form-field full"><label>Estado(s) de atuação / cobertura logística</label>
+                    <select multiple size="6">
+                      <option>BA</option><option>CE</option><option>GO</option><option>MA</option>
+                      <option>MG</option><option>MS</option><option>MT</option><option>PA</option>
+                      <option>PE</option><option>PI</option><option>PR</option><option>RO</option>
+                      <option>SP</option><option>TO</option>
+                    </select>
+                  </div>
                   <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
+                  <div class="form-field full"><label>Catálogo, apresentação ou tabela comercial (PDF, opcional)</label><input type="file" accept="application/pdf"></div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-32">Enviar cadastro</button>
                 <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
