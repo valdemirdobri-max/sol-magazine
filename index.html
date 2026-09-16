@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sol Magazine | Rede Nacional de Varejo Popular</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+#hero-home::before {
+  background: linear-gradient(to right, rgba(10,5,5,0.85) 0%, rgba(10,5,5,0.65) 30%, rgba(10,5,5,0.25) 60%, transparent 100%);
+}
+@media (max-width: 768px) {
+  #hero-home { background-position: 35% center; }
+  #hero-home::before {
+    background: linear-gradient(to right, rgba(10,5,5,0.80) 0%, rgba(10,5,5,0.50) 50%, rgba(10,5,5,0.15) 80%, transparent 100%);
+  }
+}
+</style>
 </head>
 <body>
 
@@ -35,7 +46,7 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero" style="background-image:url('https://placehold.co/1600x900/3a2424/3a2424');">
+    <section class="hero" id="hero-home" style="background-image:url('assets/images/hero-home-sol-magazine.png');">
       <div class="hero-content">
         <span class="eyebrow">Varejo Popular Nacional</span>
         <h1>Mais de 100 lojas levando o varejo popular a todo o Brasil</h1>
