@@ -65,11 +65,11 @@ Todas as 8 páginas compartilham o mesmo `<header class="site-header">` (logo, n
 
 | Seção | Conteúdo atual |
 |---|---|
-| Hero | "Indique um imóvel para a próxima loja Sol Magazine" |
-| Por que Indicar um Imóvel | 3 cards |
-| Perfil que atende | Checklist ✓/✗ de 8 itens |
-| Processo | 4 etapas |
-| Formulário | Formulário completo (16 campos, incluindo Bairro/Região, Tipo de imóvel, Valor pretendido, Situação atual, upload de fotos) + sidebar com 3 blocos |
+| Hero | "Estamos em busca de novos pontos comerciais em todo o Brasil." + CTA "Enviar meu imóvel" + barra de indicadores (+100 lojas abertas / 14 estados atendidos / Expansão contínua) |
+| Por que indicar seu imóvel | Título "locatário de longo prazo", linha de apoio + 3 cards (Parceria de longo prazo, Operação confiável e estruturada, Expansão contínua e planejada) |
+| Perfil do imóvel desejado | 6 critérios positivos (incl. estacionamento como diferencial não obrigatório) + 2 critérios que não atendem, cada um com descrição |
+| Processo de avaliação | 4 etapas |
+| Formulário | Grupos "Dados do proprietário" e "Dados do imóvel" (incl. Link Google Maps opcional, descrição adicional e upload de fotos) + sidebar com 3 blocos ("O que analisamos em cada imóvel", "Prazo de retorno", "Dúvidas?") |
 | CTA por perfil | 4 cards (Expansão, Fornecedores, Trabalhe Conosco, Contato) |
 
 ## 5. `fornecedores.html`

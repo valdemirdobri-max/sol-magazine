@@ -51,8 +51,10 @@
 
 | # | Local | Tipo | Conteúdo atual |
 |---|---|---|---|
-| IM-P1 | Sidebar do formulário | Texto | "Nosso time retorna a análise inicial em até **5 dias úteis**" — prazo fictício |
-| IM-P2 | Sidebar do formulário | Contato | `imoveis@solmagazine.com.br` |
+| IM-P1 | Sidebar do formulário — "Prazo de retorno" | Texto | "Se houver interesse, nossa equipe retorna em até **[X] dias úteis**" — prazo a definir |
+| IM-P2 | Sidebar do formulário — "Dúvidas?" | Contato | `imoveis@solmagazine.com.br` |
+| IM-P3 | "Perfil do imóvel desejado" | Texto | "Área mínima de **[X] m²**" — metragem mínima a definir |
+| IM-P4 | Hero | Imagem | Usa provisoriamente `assets/images/ldt-2025-fachada-diurna.jpg` (foto real, também usada na Linha do Tempo de Quem Somos); substituir por foto dedicada, se houver |
 
 ## `fornecedores.html`
 

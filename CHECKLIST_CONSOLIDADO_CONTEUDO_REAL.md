@@ -48,7 +48,9 @@ Cada linha representa um item de conteúdo a ser fornecido. Marque "Pronto" quan
 
 | Item | Status |
 |---|---|
-| Prazo de retorno definitivo (hoje "5 dias úteis", fictício) | ☐ Pendente |
+| Prazo de retorno definitivo (hoje "[X] dias úteis") | ☐ Pendente |
+| Área mínima do imóvel (hoje "[X] m²") | ☐ Pendente |
+| Foto dedicada para o hero (hoje usa a fachada diurna da Linha do Tempo) | ☐ Pendente |
 | E-mail definitivo do canal de imóveis | ☐ Pendente |
 | Confirmação das opções de "Tipo de imóvel" e "Situação atual" no formulário (hoje com opções provisórias) | ☐ Pendente |
 

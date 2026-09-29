@@ -5,6 +5,341 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Imóveis | Sol Magazine</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ===== IMÓVEIS — CSS SCOPED ===== */
+
+/* ----- Hero ----- */
+#hero-imoveis {
+  position: relative;
+  background-color: #271414;
+  background-image: url('assets/images/ldt-2025-fachada-diurna.jpg');
+  background-size: cover;
+  background-position: 70% center;
+  color: #fff;
+  padding: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+#hero-imoveis::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to right, rgba(20,8,8,0.92) 0%, rgba(20,8,8,0.82) 36%, rgba(20,8,8,0.50) 58%, rgba(20,8,8,0.22) 80%, rgba(20,8,8,0.14) 100%);
+}
+.im-hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 96px;
+  padding-bottom: 88px;
+}
+.im-hero-text { max-width: 600px; }
+.im-hero-text .section-eyebrow {
+  display: block;
+  color: #f2b98f;
+  margin-bottom: 18px;
+}
+.im-hero-text h1 {
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.14;
+  margin: 0 0 18px;
+}
+.im-hero-text h1 .im-destaque { color: #f2b98f; }
+.im-hero-text p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #efe6e6;
+  margin: 0 0 30px;
+  max-width: 540px;
+}
+
+/* Barra de indicadores do hero */
+.im-hero-stats {
+  position: relative;
+  z-index: 1;
+  background: rgba(30,14,14,0.92);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.im-hero-stats .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.im-stat {
+  padding: 26px 28px;
+}
+.im-stat:first-child { padding-left: 0; }
+.im-stat + .im-stat { border-left: 1px solid rgba(255,255,255,0.10); }
+.im-stat-num {
+  font-size: clamp(24px, 2.6vw, 30px);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+}
+.im-stat-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #e6d9d9;
+  margin-top: 6px;
+}
+.im-stat-sub {
+  font-size: 12.5px;
+  color: #a8958f;
+  margin-top: 2px;
+}
+.im-stat.destaque {
+  background: linear-gradient(90deg, rgba(122,20,20,0.35), rgba(122,20,20,0.10));
+}
+
+@media (max-width: 768px) {
+  #hero-imoveis { background-position: 72% center; }
+  #hero-imoveis::before {
+    background: linear-gradient(to bottom, rgba(20,8,8,0.88) 0%, rgba(20,8,8,0.76) 55%, rgba(20,8,8,0.58) 100%);
+  }
+  .im-hero-inner {
+    padding-top: 64px;
+    padding-bottom: 56px;
+  }
+  .im-hero-text p { font-size: 15.5px; }
+  .im-hero-text .btn {
+    display: block;
+    text-align: center;
+    padding: 15px 24px;
+  }
+  .im-hero-stats .container { grid-template-columns: 1fr; }
+  .im-stat { padding: 18px 0; }
+  .im-stat + .im-stat {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+  .im-stat.destaque {
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* ----- Por que indicar seu imóvel ----- */
+#por-que-indicar { padding-top: 80px; padding-bottom: 88px; }
+#por-que-indicar .section-head { max-width: 760px; margin-bottom: 28px; }
+#por-que-indicar .section-head h2 { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.25; }
+.pq-apoio {
+  background: var(--bg-claro);
+  border-left: 3px solid var(--vermelho);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 26px;
+  margin: 0 0 36px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+}
+.pq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pq-card {
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.pq-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--vermelho);
+  margin-bottom: 16px;
+}
+.pq-card h3 { font-size: 17px; margin: 0 0 10px; color: var(--texto); }
+.pq-card p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin: 0 0 18px;
+  flex: 1;
+}
+.pq-destaque {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--vermelho);
+}
+@media (max-width: 920px) {
+  .pq-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 768px) {
+  #por-que-indicar { padding-top: 56px; padding-bottom: 64px; }
+  .pq-apoio { padding: 18px 20px; font-size: 15px; }
+}
+
+/* ----- Perfil do imóvel desejado ----- */
+#perfil-imovel { padding-top: 80px; padding-bottom: 88px; }
+#perfil-imovel .section-head { margin-bottom: 40px; }
+.pf-lista {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pf-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #cfe6d6;
+  background: #f3faf5;
+}
+.pf-item.nao {
+  border-color: #efcfcf;
+  background: #fcf3f3;
+}
+.pf-item.diferencial {
+  border-color: #b9dcc4;
+  background: #e9f5ed;
+}
+.pf-marca {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: #1d6b3c;
+}
+.pf-item.nao .pf-marca { color: var(--vermelho); }
+.pf-titulo {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--texto);
+  margin: 0 0 3px;
+}
+.pf-texto {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--texto-claro);
+  margin: 0;
+}
+.pf-pill {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1f4f8a;
+  background: #e6eefa;
+  border: 1px solid #c3d4ee;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+@media (max-width: 768px) {
+  #perfil-imovel { padding-top: 56px; padding-bottom: 64px; }
+  .pf-item { padding: 14px 16px; }
+}
+
+/* ----- Processo de avaliação ----- */
+#processo-avaliacao { padding-top: 80px; padding-bottom: 88px; }
+@media (max-width: 768px) {
+  #processo-avaliacao { padding-top: 56px; padding-bottom: 64px; }
+}
+
+/* ----- Formulário ----- */
+#formulario { padding-top: 80px; padding-bottom: 88px; scroll-margin-top: 64px; }
+.fm-grupo {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--texto);
+  margin: 0 0 16px;
+}
+.fm-grupo + .form-grid { margin-bottom: 30px; }
+.fm-maps input {
+  border-style: dashed;
+}
+.fm-maps label .fm-opcional {
+  font-weight: 500;
+  color: var(--texto-claro);
+}
+.fm-upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 64px;
+  border: 1px dashed #cdbfbe;
+  border-radius: 8px;
+  background: var(--bg-claro);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto-claro);
+  cursor: pointer;
+  text-align: center;
+  padding: 14px;
+}
+.fm-upload:hover { border-color: var(--vermelho); color: var(--vermelho); }
+.fm-upload svg { width: 18px; height: 18px; flex-shrink: 0; }
+.fm-upload input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.fm-upload-nome { display: block; font-weight: 500; font-size: 12.5px; margin-top: 2px; }
+.fm-privacidade {
+  font-size: 12.5px;
+  color: var(--texto-claro);
+  margin: 14px 0 0;
+}
+
+/* Sidebar */
+.sb-lista {
+  list-style: none;
+  margin: 4px 0 16px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.sb-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--texto);
+}
+.sb-lista svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #1d6b3c;
+}
+.sb-pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vermelho-escuro);
+  background: #fdeaea;
+  border: 1px solid #f3c7c7;
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+.sidebar-card .sb-sep { margin-top: 12px; }
+.sb-email {
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: 700;
+  color: var(--vermelho);
+  word-break: break-all;
+}
+@media (max-width: 768px) {
+  #formulario { padding-top: 56px; padding-bottom: 64px; }
+  .form-card { padding: 24px 18px; }
+  #formulario .form-card .btn { display: block; width: 100%; padding: 15px 24px; }
+}
+</style>
 </head>
 <body>
 
@@ -34,58 +369,142 @@
   </header>
 
   <main>
-    <section class="hero" style="background-image:url('https://placehold.co/1600x900/3a2424/3a2424');">
-      <div class="hero-content">
-        <span class="eyebrow">Imóveis</span>
-        <h1>Indique um imóvel para a próxima loja Sol Magazine</h1>
-        <p>Ajude a Sol Magazine a chegar a novas regiões indicando pontos comerciais estratégicos.</p>
-        <div class="hero-actions">
-          <a href="#formulario" class="btn btn-primary">Indicar imóvel</a>
+    <!-- HERO -->
+    <section id="hero-imoveis" role="img" aria-label="Fachada de loja Sol Magazine em ponto comercial de esquina">
+      <div class="container im-hero-inner">
+        <div class="im-hero-text">
+          <span class="section-eyebrow">Imóveis</span>
+          <h1>Estamos em busca de <span class="im-destaque">novos pontos comerciais</span> em todo o Brasil.</h1>
+          <p>A abertura contínua de novas unidades exige imóveis estratégicos com alto fluxo e boa visibilidade. Se o seu imóvel tem esse perfil, queremos conhecer.</p>
+          <a href="#formulario" class="btn btn-primary">Enviar meu imóvel &rarr;</a>
+        </div>
+      </div>
+      <div class="im-hero-stats">
+        <div class="container">
+          <div class="im-stat">
+            <div class="im-stat-num">+100</div>
+            <div class="im-stat-label">Lojas abertas</div>
+            <div class="im-stat-sub">modelo comprovado</div>
+          </div>
+          <div class="im-stat">
+            <div class="im-stat-num">14</div>
+            <div class="im-stat-label">Estados atendidos</div>
+            <div class="im-stat-sub">expansão permanente</div>
+          </div>
+          <div class="im-stat destaque">
+            <div class="im-stat-num">Expansão</div>
+            <div class="im-stat-label">Contínua</div>
+            <div class="im-stat-sub">novos pontos em avaliação permanente</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Por que Indicar um Imóvel</span>
-          <h2>Sua indicação pode abrir a próxima unidade da rede</h2>
-        </div>
-        <div class="grid grid-3">
-          <div class="card"><div class="card-icon">01</div><h3>Rede em expansão</h3><p>A Sol Magazine busca constantemente novos pontos comerciais.</p></div>
-          <div class="card"><div class="card-icon">02</div><h3>Processo transparente</h3><p>Análise técnica e retorno claro sobre a viabilidade do imóvel.</p></div>
-          <div class="card"><div class="card-icon">03</div><h3>Parceria de longo prazo</h3><p>Relação comercial estável com uma rede nacional consolidada.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-tinted">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Perfil que atende</span>
-          <h2>O que buscamos em um novo ponto comercial</h2>
-        </div>
-        <div class="checklist-grid">
-          <ul class="checklist-list">
-            <li class="checklist-item"><span class="icon-check">✓</span><span>Térreo com acesso direto</span></li>
-            <li class="checklist-item"><span class="icon-check">✓</span><span>Área mínima compatível com o modelo de loja</span></li>
-            <li class="checklist-item"><span class="icon-check">✓</span><span>Alto fluxo de pessoas</span></li>
-            <li class="checklist-item"><span class="icon-check">✓</span><span>Boa visibilidade</span></li>
-            <li class="checklist-item"><span class="icon-check">✓</span><span>Estacionamento como diferencial desejável, não obrigatório</span></li>
-            <li class="checklist-item"><span class="icon-check">✓</span><span>Localização em região comercial</span></li>
-          </ul>
-          <ul class="checklist-list">
-            <li class="checklist-item"><span class="icon-cross">✗</span><span>Andares superiores sem acesso — não atende</span></li>
-            <li class="checklist-item"><span class="icon-cross">✗</span><span>Regiões com baixo fluxo — não atende</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-alt">
+    <!-- POR QUE INDICAR SEU IMÓVEL -->
+    <section class="section-alt" id="por-que-indicar">
       <div class="container">
         <div class="section-head left">
-          <span class="section-eyebrow">Processo</span>
+          <span class="section-eyebrow">Por que indicar seu imóvel</span>
+          <h2>A Sol Magazine é um locatário de longo prazo, com operação estável e presença nacional.</h2>
+        </div>
+        <p class="pq-apoio">Valorizamos relacionamentos de longo prazo com proprietários e administradores. Nosso objetivo é construir operações duradouras e sustentáveis para ambas as partes.</p>
+        <div class="pq-grid">
+          <div class="pq-card">
+            <svg class="pq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M10 21v-6h4v6"/></svg>
+            <h3>Parceria de longo prazo</h3>
+            <p>A Sol Magazine busca contratos estáveis com proprietários comprometidos. Nossas lojas permanecem nos pontos por anos — não são operações temporárias.</p>
+            <span class="pq-destaque">+10 anos de atuação</span>
+          </div>
+          <div class="pq-card">
+            <svg class="pq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3>Operação confiável e estruturada</h3>
+            <p>Rede com mais de 100 lojas em operação, gestão padronizada e presença em 14 estados. O proprietário tem a segurança de um locatário com histórico comprovado.</p>
+            <span class="pq-destaque">+100 lojas em operação</span>
+          </div>
+          <div class="pq-card">
+            <svg class="pq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+            <h3>Expansão contínua e planejada</h3>
+            <p>Não abrimos lojas por impulso. Cada nova unidade é avaliada com critérios claros de localização e potencial de mercado — garantindo durabilidade da operação.</p>
+            <span class="pq-destaque">Modelo validado há mais de uma década</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERFIL DO IMÓVEL DESEJADO -->
+    <section class="section-tinted" id="perfil-imovel">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-eyebrow">Perfil do imóvel desejado</span>
+          <h2>O que buscamos em um novo ponto comercial</h2>
+        </div>
+        <ul class="pf-lista">
+          <li class="pf-item">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+            <div>
+              <p class="pf-titulo">Térreo com acesso direto à rua</p>
+              <p class="pf-texto">Visibilidade imediata para o pedestre e acesso facilitado ao consumidor.</p>
+            </div>
+          </li>
+          <li class="pf-item">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+            <div>
+              <p class="pf-titulo">Área mínima de [X] m² <span class="placeholder-tag">placeholder</span></p>
+              <p class="pf-texto">Área útil suficiente para o modelo padrão de loja Sol Magazine.</p>
+            </div>
+          </li>
+          <li class="pf-item">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+            <div>
+              <p class="pf-titulo">Alto fluxo de pessoas</p>
+              <p class="pf-texto">Proximidade com comércio ativo, mercados, feiras ou centros populares.</p>
+            </div>
+          </li>
+          <li class="pf-item">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+            <div>
+              <p class="pf-titulo">Boa visibilidade da fachada</p>
+              <p class="pf-texto">Frente ampla, fachada voltada para via de movimento intenso.</p>
+            </div>
+          </li>
+          <li class="pf-item diferencial">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14"/><path d="M6 17v-5l2-5h8l2 5v5"/><path d="M6 12h12"/><circle cx="8.5" cy="17.5" r="1.5"/><circle cx="15.5" cy="17.5" r="1.5"/></svg>
+            <div>
+              <p class="pf-titulo">Estacionamento ou facilidade de acesso</p>
+              <p class="pf-texto">Imóveis com estacionamento próprio ou facilidade de parada e acesso ao consumidor possuem vantagem operacional. Não é requisito obrigatório — é um diferencial desejável.</p>
+              <span class="pf-pill">Diferencial — não obrigatório</span>
+            </div>
+          </li>
+          <li class="pf-item">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+            <div>
+              <p class="pf-titulo">Localização em região comercial</p>
+              <p class="pf-texto">Centro comercial, corredor popular, área de forte circulação urbana.</p>
+            </div>
+          </li>
+          <li class="pf-item nao">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <div>
+              <p class="pf-titulo">Andares superiores sem acesso direto</p>
+              <p class="pf-texto">Modelo da Sol Magazine exige ponto de entrada com visibilidade imediata.</p>
+            </div>
+          </li>
+          <li class="pf-item nao">
+            <svg class="pf-marca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            <div>
+              <p class="pf-titulo">Regiões com baixo fluxo</p>
+              <p class="pf-texto">A viabilidade depende de circulação de consumidores no entorno.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROCESSO DE AVALIAÇÃO -->
+    <section class="section-alt" id="processo-avaliacao">
+      <div class="container">
+        <div class="section-head left">
+          <span class="section-eyebrow">Processo de avaliação</span>
           <h2>Como funciona a indicação</h2>
         </div>
         <div class="steps">
@@ -97,32 +516,45 @@
       </div>
     </section>
 
+    <!-- FORMULÁRIO -->
     <section class="section-tinted" id="formulario">
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">Formulário</span>
-          <h2>Indique seu imóvel</h2>
+          <h2>Envie seu imóvel para avaliação</h2>
         </div>
         <div class="contato-layout">
           <div>
             <div class="form-card">
               <form data-prototype-form>
+                <p class="fm-grupo">Dados do proprietário</p>
                 <div class="form-grid">
-                  <div class="form-field"><label>Nome completo</label><input type="text" required></div>
-                  <div class="form-field"><label>Telefone</label><input type="tel" required></div>
-                  <div class="form-field"><label>E-mail</label><input type="email" required></div>
-                  <div class="form-field"><label>Estado</label>
-                    <select>
-                      <option>BA</option><option>CE</option><option>GO</option><option>MA</option>
-                      <option>MG</option><option>MS</option><option>MT</option><option>PA</option>
-                      <option>PE</option><option>PI</option><option>PR</option><option>RO</option>
-                      <option>SP</option><option>TO</option>
+                  <div class="form-field"><label for="im-nome">Nome completo</label><input id="im-nome" type="text" autocomplete="name" required></div>
+                  <div class="form-field"><label for="im-telefone">Telefone / WhatsApp</label><input id="im-telefone" type="tel" autocomplete="tel" required></div>
+                  <div class="form-field"><label for="im-email">E-mail</label><input id="im-email" type="email" autocomplete="email" required></div>
+                  <div class="form-field"><label for="im-cidade">Cidade</label><input id="im-cidade" type="text" required></div>
+                  <div class="form-field full"><label for="im-estado">Estado</label>
+                    <select id="im-estado" required>
+                      <option value="">Selecione</option>
+                      <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                      <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                      <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                      <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                      <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                      <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                      <option>SP</option><option>SE</option><option>TO</option>
                     </select>
                   </div>
-                  <div class="form-field"><label>Cidade</label><input type="text"></div>
-                  <div class="form-field"><label>Metragem aproximada (m²)</label><input type="text"></div>
-                  <div class="form-field"><label>Tipo de imóvel</label>
-                    <select required>
+                </div>
+
+                <p class="fm-grupo">Dados do imóvel</p>
+                <div class="form-grid">
+                  <div class="form-field"><label for="im-endereco">Endereço completo</label><input id="im-endereco" type="text" required></div>
+                  <div class="form-field"><label for="im-bairro">Bairro / Região</label><input id="im-bairro" type="text"></div>
+                  <div class="form-field full fm-maps"><label for="im-maps">Link Google Maps <span class="fm-opcional">(opcional)</span></label><input id="im-maps" type="url" placeholder="https://maps.google.com/..."></div>
+                  <div class="form-field"><label for="im-area">Área total (m²)</label><input id="im-area" type="text" inputmode="numeric"></div>
+                  <div class="form-field"><label for="im-tipo">Tipo de imóvel</label>
+                    <select id="im-tipo" required>
                       <option value="">Selecione</option>
                       <option>Térreo</option>
                       <option>Sobreloja</option>
@@ -130,51 +562,60 @@
                       <option>Outro</option>
                     </select>
                   </div>
-                  <div class="form-field"><label>Valor pretendido (R$)</label><input type="text"></div>
-                  <div class="form-field"><label>Situação atual</label>
-                    <select required>
+                  <div class="form-field"><label for="im-valor">Valor pretendido (R$)</label><input id="im-valor" type="text" inputmode="decimal"></div>
+                  <div class="form-field"><label for="im-situacao">Situação atual</label>
+                    <select id="im-situacao" required>
                       <option value="">Selecione</option>
                       <option>Disponível</option>
                       <option>Ocupado</option>
                       <option>Em reforma</option>
                     </select>
                   </div>
-                  <div class="form-field"><label>Possui estacionamento (diferencial, não obrigatório)</label>
-                    <select>
-                      <option>Sim</option>
-                      <option>Não</option>
-                    </select>
+                  <div class="form-field full"><label for="im-descricao">Descrição adicional</label><textarea id="im-descricao" rows="4" placeholder="Localização, estrutura, entorno, estacionamento…"></textarea></div>
+                  <div class="form-field full">
+                    <label class="fm-upload" for="im-fotos">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M4 20h16"/></svg>
+                      <span>Fotos — fachada, interior e entorno<span class="fm-upload-nome" data-upload-nome></span></span>
+                      <input id="im-fotos" type="file" multiple accept="image/*">
+                    </label>
                   </div>
-                  <div class="form-field"><label>Endereço do imóvel</label><input type="text"></div>
-                  <div class="form-field"><label>Bairro / Região</label><input type="text"></div>
-                  <div class="form-field full"><label>Link Google Maps (opcional)</label><input type="url" placeholder="https://maps.google.com/..."></div>
-                  <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
-                  <div class="form-field full"><label>Fotos — fachada, interior e entorno</label><input type="file" multiple accept="image/*"></div>
                 </div>
-                <button type="submit" class="btn btn-primary mt-32">Enviar indicação</button>
+                <button type="submit" class="btn btn-primary">Enviar imóvel</button>
+                <p class="fm-privacidade">Seus dados são tratados com segurança e utilizados apenas para a análise do imóvel.</p>
                 <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
               </form>
-              <div class="form-success">Indicação enviada com sucesso. Nosso time entrará em contato em breve.</div>
+              <div class="form-success">Imóvel enviado com sucesso. Se houver interesse, nossa equipe entrará em contato.</div>
             </div>
           </div>
           <aside>
             <div class="sidebar-card">
               <h4>O que analisamos em cada imóvel</h4>
-              <p>Localização, fluxo, metragem e documentação do imóvel.</p>
+              <ul class="sb-lista">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Localização e fluxo de pessoas</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Área e estrutura do imóvel</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Visibilidade e acesso da fachada</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Potencial de consumo da região</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Facilidade de acesso e estacionamento</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Viabilidade operacional e logística</li>
+              </ul>
+              <span class="sb-pill">Analisamos todos os imóveis recebidos</span>
             </div>
             <div class="sidebar-card">
               <h4>Prazo de retorno</h4>
-              <p>Nosso time retorna a análise inicial em até 5 dias úteis <span class="placeholder-tag">placeholder</span>.</p>
+              <p>Se houver interesse, nossa equipe retorna em até <strong>[X] dias úteis</strong> <span class="placeholder-tag">placeholder</span>.</p>
+              <p class="sb-sep">Imóveis fora do perfil são arquivados para consultas futuras.</p>
             </div>
             <div class="sidebar-card">
               <h4>Dúvidas?</h4>
-              <p>imoveis@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
+              <p>Canal de imóveis:</p>
+              <a class="sb-email" href="mailto:imoveis@solmagazine.com.br">imoveis@solmagazine.com.br</a> <span class="placeholder-tag">placeholder</span>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
+    <!-- CTA POR PERFIL -->
     <section class="section-alt">
       <div class="container">
         <div class="cta-perfil-grid">
@@ -254,5 +695,18 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+  // Exibe os arquivos selecionados no campo de fotos
+  (function () {
+    var input = document.getElementById('im-fotos');
+    var nome = document.querySelector('[data-upload-nome]');
+    if (!input || !nome) return;
+    input.addEventListener('change', function () {
+      var n = input.files.length;
+      nome.textContent = n === 0 ? '' : n === 1 ? input.files[0].name : n + ' arquivos selecionados';
+    });
+    input.form.addEventListener('reset', function () { nome.textContent = ''; });
+  })();
+  </script>
 </body>
 </html>
