@@ -5,6 +5,372 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Expansão | Sol Magazine</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ===== EXPANSÃO — Hero scoped ===== */
+
+/* Bloco fotográfico */
+#hero-expansao-foto {
+  width: 100%;
+  height: 540px;
+  background-image: url('assets/images/hero-expansao-desktop.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px) {
+  #hero-expansao-foto {
+    background-image: url('assets/images/hero-expansao-mobile.png');
+    height: 480px;
+  }
+}
+@media (max-width: 480px) {
+  #hero-expansao-foto {
+    height: 460px;
+  }
+}
+
+/* Bloco editorial */
+#hero-expansao-editorial {
+  background: #fff;
+  padding: 56px 0 64px;
+}
+#hero-expansao-editorial .exp-editorial-inner {
+  max-width: 680px;
+}
+#hero-expansao-editorial .section-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+#hero-expansao-editorial h1 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.18;
+  color: var(--titulo);
+  margin: 0 0 20px;
+}
+#hero-expansao-editorial p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  #hero-expansao-editorial {
+    padding: 40px 0 48px;
+  }
+  #hero-expansao-editorial h1 {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+  #hero-expansao-editorial p {
+    font-size: 15px;
+  }
+}
+
+/* ===== COMO CRESCEMOS ===== */
+#como-crescemos {
+  padding-top: 80px;
+  padding-bottom: 88px;
+}
+#como-crescemos .section-head {
+  margin-bottom: 56px;
+}
+#como-crescemos .cc-intro {
+  max-width: 660px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--texto-claro);
+  margin: 0;
+}
+.cc-fundamentos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 56px;
+}
+.cc-item {
+  padding: 0 40px;
+}
+.cc-item:first-child { padding-left: 0; }
+.cc-item:last-child  { padding-right: 0; }
+.cc-item + .cc-item  { border-left: 1px solid var(--borda); }
+.cc-acento {
+  width: 24px;
+  height: 2px;
+  background: var(--vermelho);
+  margin-bottom: 20px;
+}
+.cc-titulo {
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--titulo);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.cc-texto {
+  font-size: 14.5px;
+  color: var(--texto-claro);
+  line-height: 1.75;
+  margin: 0;
+}
+/* Tablet */
+@media (max-width: 768px) {
+  #como-crescemos {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+  .cc-fundamentos {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+    gap: 0;
+  }
+  .cc-item {
+    padding: 28px 0 0 0;
+  }
+  .cc-item:first-child { padding-top: 0; }
+  .cc-item + .cc-item {
+    border-left: none;
+    border-top: 1px solid var(--borda);
+  }
+  .cc-item:last-child { padding-right: 0; }
+}
+
+/* ===== QUEM PARTICIPA DA EXPANSÃO ===== */
+#quem-participa {
+  padding-top: 80px;
+  padding-bottom: 88px;
+  background: #f8f8f6;
+}
+#quem-participa .section-head {
+  margin-bottom: 56px;
+  max-width: 640px;
+}
+.qp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.qp-item {
+  padding: 0 40px;
+}
+.qp-item:first-child { padding-left: 0; }
+.qp-item:last-child  { padding-right: 0; }
+.qp-item + .qp-item  { border-left: 1px solid var(--borda); }
+.qp-acento {
+  width: 24px;
+  height: 2px;
+  background: var(--vermelho);
+  margin-bottom: 20px;
+}
+.qp-titulo {
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--titulo);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.qp-texto {
+  font-size: 14.5px;
+  color: var(--texto-claro);
+  line-height: 1.75;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  #quem-participa {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+  #quem-participa .section-head { margin-bottom: 40px; }
+  .qp-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .qp-item {
+    padding: 28px 0 0 0;
+  }
+  .qp-item:first-child { padding-top: 0; }
+  .qp-item + .qp-item {
+    border-left: none;
+    border-top: 1px solid var(--borda);
+  }
+  .qp-item:last-child { padding-right: 0; }
+}
+
+/* ===== CRITÉRIOS DE EXPANSÃO ===== */
+#criterios-expansao {
+  padding-top: 72px;
+  padding-bottom: 80px;
+  background: #fff;
+}
+.ce-inner {
+  max-width: 640px;
+}
+.ce-inner .section-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+.ce-titulo {
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.2;
+  color: var(--titulo);
+  margin: 0 0 20px;
+}
+.ce-texto {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--texto-claro);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  #criterios-expansao {
+    padding-top: 52px;
+    padding-bottom: 60px;
+  }
+  .ce-titulo { font-size: clamp(20px, 4.5vw, 28px); }
+  .ce-texto  { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  #criterios-expansao {
+    padding-top: 44px;
+    padding-bottom: 52px;
+  }
+}
+
+/* ===== 7 ETAPAS ===== */
+#sete-etapas {
+  padding-top: 80px;
+  padding-bottom: 88px;
+}
+#sete-etapas .section-head {
+  margin-bottom: 64px;
+}
+
+/* Grid desktop: 4 + 3 */
+.et-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.et-grid-b {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 0;
+}
+/* A segunda linha ocupa só 3 das 4 colunas — alinhada à esquerda */
+.et-grid-b .et-item:nth-child(1) { grid-column: 1; }
+.et-grid-b .et-item:nth-child(2) { grid-column: 2; }
+.et-grid-b .et-item:nth-child(3) { grid-column: 3; }
+
+.et-item {
+  padding: 32px 28px 32px 0;
+  border-top: 1px solid var(--borda);
+  position: relative;
+}
+.et-item:last-child { padding-right: 0; }
+
+.et-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--vermelho);
+  letter-spacing: 0.06em;
+  margin: 0 0 14px;
+  display: block;
+}
+.et-titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--titulo);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+.et-texto {
+  font-size: 13.5px;
+  color: var(--texto-claro);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Tablet: 2 colunas */
+@media (max-width: 768px) {
+  #sete-etapas {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+  .et-grid,
+  .et-grid-b {
+    grid-template-columns: 1fr 1fr;
+  }
+  .et-grid-b .et-item:nth-child(1),
+  .et-grid-b .et-item:nth-child(2),
+  .et-grid-b .et-item:nth-child(3) {
+    grid-column: auto;
+  }
+  /* item 7 (sozinho) — limitar largura */
+  .et-grid-b .et-item:last-child {
+    max-width: calc(50% - 14px);
+  }
+  .et-item {
+    padding: 24px 20px 24px 0;
+  }
+  .et-item:nth-child(even) {
+    padding-left: 20px;
+    padding-right: 0;
+  }
+}
+
+/* Mobile: 1 coluna com linha vertical */
+@media (max-width: 480px) {
+  .et-grid,
+  .et-grid-b {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+  /* linha vertical discreta à esquerda */
+  .et-grid::before,
+  .et-grid-b::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--borda);
+  }
+  .et-item {
+    padding: 20px 0 20px 32px;
+    border-top: none;
+    border-bottom: none;
+  }
+  .et-item:first-child { padding-top: 0; }
+  .et-item:nth-child(even) {
+    padding-left: 32px;
+    padding-right: 0;
+  }
+  .et-grid-b .et-item:last-child {
+    max-width: 100%;
+    grid-column: auto;
+  }
+  .et-num {
+    position: relative;
+  }
+  .et-num::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--vermelho);
+    border: 2px solid #fff;
+    box-sizing: border-box;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -34,111 +400,132 @@
   </header>
 
   <main>
-    <section class="hero" style="background-image:url('https://placehold.co/1600x900/3a2424/3a2424');">
-      <div class="hero-content">
-        <span class="eyebrow">Projeto de Expansão</span>
-        <h1>Um modelo de crescimento estruturado, estado por estado</h1>
-        <p>Entenda como a Sol Magazine cresce de forma padronizada e sustentável em todo o país.</p>
-        <div class="hero-actions">
-          <a href="#" class="btn btn-primary" id="link-landing-expansao">Acessar Landing de Expansão</a>
+    <!-- HERO: bloco fotográfico -->
+    <div id="hero-expansao-foto" role="img" aria-label="Fachada noturna de loja Sol Magazine — Projeto de Expansão"></div>
+
+    <!-- HERO: bloco editorial -->
+    <section id="hero-expansao-editorial">
+      <div class="container">
+        <div class="exp-editorial-inner">
+          <span class="section-eyebrow">Projeto de Expansão</span>
+          <h1>Um modelo de crescimento estruturado, estado por estado</h1>
+          <p>Entenda como a Sol Magazine cresce de forma padronizada e sustentável em todo o país.</p>
         </div>
       </div>
     </section>
 
-    <section class="section-alt">
+    <!-- COMO CRESCEMOS -->
+    <section class="section-alt" id="como-crescemos">
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">Como Crescemos</span>
           <h2>Expansão contínua, com padrão em cada unidade</h2>
-          <p>A cada nova loja, mantemos o mesmo padrão de operação, identidade visual e atendimento que já está presente em mais de 100 unidades.</p>
+        </div>
+        <p class="cc-intro">A expansão da Sol Magazine parte de um modelo de operação já estabelecido. Cada nova unidade é implantada seguindo padrões definidos para preservar a identidade da marca e a consistência da operação.</p>
+        <div class="cc-fundamentos">
+          <div class="cc-item">
+            <div class="cc-acento"></div>
+            <p class="cc-titulo">Operação padronizada</p>
+            <p class="cc-texto">Processos e padrões comuns orientam a implantação e a operação de cada nova loja.</p>
+          </div>
+          <div class="cc-item">
+            <div class="cc-acento"></div>
+            <p class="cc-titulo">Compras em escala</p>
+            <p class="cc-texto">A expansão amplia a capacidade de compra e abastecimento de uma rede com presença em diferentes regiões do país.</p>
+          </div>
+          <div class="cc-item">
+            <div class="cc-acento"></div>
+            <p class="cc-titulo">Implantação estruturada</p>
+            <p class="cc-texto">Cada nova unidade passa por etapas definidas, desde a escolha da região e do imóvel até a abertura e o acompanhamento da operação.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-tinted">
+    <section id="sete-etapas">
       <div class="container">
         <div class="section-head">
-          <span class="section-eyebrow">Modelo que Sustenta a Expansão</span>
-          <h2>Os pilares do nosso crescimento</h2>
-        </div>
-        <div class="grid grid-4">
-          <div class="card">
-            <h3>Varejo popular</h3>
-            <p>Segmento com demanda resiliente. O consumidor de massa não para de consumir.</p>
-            <div class="stat mt-32"><div class="stat-num" style="color:var(--vermelho); font-size:24px;">+100</div><div class="stat-label" style="color:var(--texto-claro);">lojas — comprovando o modelo</div></div>
-          </div>
-          <div class="card">
-            <h3>Gestão padronizada</h3>
-            <p>Processos replicáveis que permitem abrir novas lojas sem perder consistência operacional.</p>
-            <div class="stat mt-32"><div class="stat-num" style="color:var(--vermelho); font-size:24px;">14</div><div class="stat-label" style="color:var(--texto-claro);">estados com operação uniforme</div></div>
-          </div>
-          <div class="card">
-            <h3>Compras em escala</h3>
-            <p>Cada nova loja fortalece e melhora a margem do conjunto.</p>
-            <div class="stat mt-32"><div class="stat-num" style="color:var(--vermelho); font-size:24px;">+10</div><div class="stat-label" style="color:var(--texto-claro);">anos de cadeia consolidada</div></div>
-          </div>
-          <div class="card">
-            <h3>Expansão estruturada</h3>
-            <p>Critérios definidos de localização, perfil de imóvel e avaliação de mercado.</p>
-            <div class="stat mt-32"><div class="stat-num" style="color:var(--vermelho); font-size:24px;">+10 anos</div><div class="stat-label" style="color:var(--texto-claro);">crescimento consistente</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head left">
           <span class="section-eyebrow">Como a Expansão Acontece</span>
           <h2>7 etapas até a abertura de uma nova unidade</h2>
         </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">1</div><div><h3>Identificação da região</h3><p>Mapeamento de praças estratégicas com potencial de mercado para novas unidades.</p></div></div>
-          <div class="step"><div class="step-num">2</div><div><h3>Indicação de imóvel</h3><p>Recebimento de pontos comerciais que atendem aos critérios de localização e estrutura.</p></div></div>
-          <div class="step"><div class="step-num">3</div><div><h3>Análise de viabilidade</h3><p>Avaliação técnica, comercial e documental do ponto indicado.</p></div></div>
-          <div class="step"><div class="step-num">4</div><div><h3>Negociação</h3><p>Definição das condições comerciais com o proprietário ou parceiro.</p></div></div>
-          <div class="step"><div class="step-num">5</div><div><h3>Adequação do espaço</h3><p>Padronização da unidade conforme o modelo de loja Sol Magazine.</p></div></div>
-          <div class="step"><div class="step-num">6</div><div><h3>Estruturação operacional</h3><p>Montagem de equipe, estoque e processos antes da abertura.</p></div></div>
-          <div class="step"><div class="step-num">7</div><div><h3>Abertura e acompanhamento</h3><p>Inauguração da unidade e acompanhamento do padrão Sol Magazine nos primeiros meses.</p></div></div>
+
+        <!-- Linha 1: etapas 01–04 -->
+        <div class="et-grid">
+          <div class="et-item">
+            <span class="et-num">01</span>
+            <p class="et-titulo">Identificação da região</p>
+            <p class="et-texto">Mapeamento de praças estratégicas com potencial de mercado para novas unidades.</p>
+          </div>
+          <div class="et-item">
+            <span class="et-num">02</span>
+            <p class="et-titulo">Indicação de imóvel</p>
+            <p class="et-texto">Recebimento de pontos comerciais que atendem aos critérios de localização e estrutura.</p>
+          </div>
+          <div class="et-item">
+            <span class="et-num">03</span>
+            <p class="et-titulo">Análise de viabilidade</p>
+            <p class="et-texto">Avaliação técnica, comercial e documental do ponto indicado.</p>
+          </div>
+          <div class="et-item">
+            <span class="et-num">04</span>
+            <p class="et-titulo">Negociação</p>
+            <p class="et-texto">Definição das condições comerciais com o proprietário ou parceiro.</p>
+          </div>
         </div>
+
+        <!-- Linha 2: etapas 05–07 -->
+        <div class="et-grid-b">
+          <div class="et-item">
+            <span class="et-num">05</span>
+            <p class="et-titulo">Adequação do espaço</p>
+            <p class="et-texto">Padronização da unidade conforme o modelo de loja Sol Magazine.</p>
+          </div>
+          <div class="et-item">
+            <span class="et-num">06</span>
+            <p class="et-titulo">Estruturação operacional</p>
+            <p class="et-texto">Montagem de equipe, estoque e processos antes da abertura.</p>
+          </div>
+          <div class="et-item">
+            <span class="et-num">07</span>
+            <p class="et-titulo">Abertura e acompanhamento</p>
+            <p class="et-texto">Inauguração da unidade e acompanhamento do padrão Sol Magazine nos primeiros meses.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="section-tinted">
+    <section id="criterios-expansao">
       <div class="container">
-        <div class="section-head">
+        <div class="ce-inner">
           <span class="section-eyebrow">Critérios de Expansão</span>
-          <h2>O que avaliamos em cada nova unidade</h2>
-        </div>
-        <div class="grid grid-3">
-          <div class="card"><h3>Localização</h3><p>Fluxo de pessoas e relevância comercial da região.</p></div>
-          <div class="card"><h3>Estrutura do imóvel</h3><p>Metragem e características compatíveis com o modelo de loja.</p></div>
-          <div class="card"><h3>Potencial de mercado</h3><p>Perfil de consumo da região e potencial de crescimento.</p></div>
+          <h2 class="ce-titulo">Cada nova unidade precisa fazer sentido para a operação</h2>
+          <p class="ce-texto">A abertura de uma nova loja considera o potencial da região, a localização, as características do imóvel e a viabilidade da operação. Esses fatores são analisados em conjunto antes do avanço para as etapas de implantação.</p>
         </div>
       </div>
     </section>
 
-    <section class="section-alt">
+    <section id="quem-participa">
       <div class="container">
         <div class="section-head">
-          <span class="section-eyebrow">O que é o Projeto de Expansão</span>
-          <h2>O crescimento da Sol Magazine ocorre através de um modelo estruturado que conecta diferentes parceiros ao processo de abertura de novas unidades</h2>
+          <span class="section-eyebrow">Quem Participa da Expansão</span>
+          <h2>Diferentes formas de fazer parte do crescimento da Sol Magazine</h2>
         </div>
-        <div class="grid grid-3">
-          <div class="card">
-            <h3>Investidores e parceiros</h3>
-            <p>O Projeto de Expansão oferece formas estruturadas de participação para investidores e parceiros de negócio interessados no crescimento da rede — modelo validado, operação real e histórico de mais de uma década.</p>
-            <span class="badge">Oportunidade de participação</span>
+        <div class="qp-grid">
+          <div class="qp-item">
+            <div class="qp-acento"></div>
+            <p class="qp-titulo">Investidores e parceiros</p>
+            <p class="qp-texto">Participação em projetos de expansão da rede, conforme os modelos definidos pela Sol Magazine.</p>
           </div>
-          <div class="card">
-            <h3>Proprietários de imóveis</h3>
-            <p>A abertura de novas unidades depende de imóveis estratégicos. Proprietários com pontos comerciais de alto fluxo são parceiros fundamentais do processo de expansão — com contratos de longo prazo e locatário estável.</p>
-            <span class="badge">Parceria imobiliária</span>
+          <div class="qp-item">
+            <div class="qp-acento"></div>
+            <p class="qp-titulo">Proprietários de imóveis</p>
+            <p class="qp-texto">Apresentação de pontos comerciais com potencial para receber novas unidades.</p>
           </div>
-          <div class="card">
-            <h3>Empreendedores e operadores</h3>
-            <p>O Projeto conecta também empreendedores interessados em operar novas unidades dentro do modelo Sol Magazine — com suporte operacional, abastecimento centralizado e gestão padronizada da rede.</p>
-            <span class="badge">Operação de unidades</span>
+          <div class="qp-item">
+            <div class="qp-acento"></div>
+            <p class="qp-titulo">Empreendedores e operadores</p>
+            <p class="qp-texto">Participação na implantação e operação de novas lojas, conforme o modelo de expansão da rede.</p>
           </div>
         </div>
       </div>
@@ -147,41 +534,10 @@
     <section class="section-tinted">
       <div class="container">
         <div class="cta-final">
-          <h2>Quer levar a Sol Magazine para sua região?</h2>
-          <p>Acesse a Landing Page de Expansão para conhecer as oportunidades disponíveis.</p>
+          <h2>Quer participar da expansão da Sol Magazine?</h2>
+          <p>Conheça o Projeto de Expansão e as formas de participar do crescimento da rede.</p>
           <div class="cta-final-actions">
-            <a href="#" class="btn btn-primary" id="link-landing-expansao-2">Acessar Landing de Expansão <span class="placeholder-tag">URL placeholder</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-alt">
-      <div class="container">
-        <div class="cta-perfil-grid">
-          <div class="cta-perfil">
-            <span class="badge">Proprietário</span>
-            <h4>Imóveis</h4>
-            <p>Tenho um imóvel para indicar.</p>
-            <a href="imoveis.html" class="btn btn-primary">Indicar imóvel</a>
-          </div>
-          <div class="cta-perfil">
-            <span class="badge">Fornecedor</span>
-            <h4>Fornecedores</h4>
-            <p>Quero homologar minha empresa.</p>
-            <a href="fornecedores.html" class="btn btn-primary">Ser fornecedor</a>
-          </div>
-          <div class="cta-perfil">
-            <span class="badge">Candidato</span>
-            <h4>Trabalhe Conosco</h4>
-            <p>Quero fazer parte do time.</p>
-            <a href="trabalhe-conosco.html" class="btn btn-primary">Ver vagas</a>
-          </div>
-          <div class="cta-perfil">
-            <span class="badge">Investidor</span>
-            <h4>Investidores e Parceiros</h4>
-            <p>Quero participar financeiramente ou como parceiro de negócio.</p>
-            <a href="contato.html" class="btn btn-primary">Conhecer o projeto</a>
+            <a href="#" class="btn btn-primary" id="link-landing-expansao-2">Conhecer o Projeto de Expansão</a>
           </div>
         </div>
       </div>
