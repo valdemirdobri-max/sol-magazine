@@ -5,6 +5,332 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trabalhe Conosco | Sol Magazine</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ===== TRABALHE CONOSCO — CSS SCOPED ===== */
+
+/* ----- Hero: bloco fotográfico ----- */
+/* PENDENTE: fotografia real do Hero ainda não definida.
+   Ao receber os assets, aplicar background-image em cada faixa abaixo
+   (desktop / tablet / mobile), definir background-position conforme a foto
+   e remover a área neutra. */
+#hero-trabalhe-foto {
+  width: 100%;
+  height: 540px;
+  background-color: #ece4e2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Tablet: 481px–1024px */
+@media (min-width: 481px) and (max-width: 1024px) {
+  #hero-trabalhe-foto { height: 440px; }
+}
+/* Mobile: até 480px */
+@media (max-width: 480px) {
+  #hero-trabalhe-foto { height: 460px; }
+}
+.tc-foto-pendente {
+  margin: 0;
+  padding: 0 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto-claro);
+  text-align: center;
+}
+
+/* ----- Hero: bloco editorial ----- */
+#hero-trabalhe-editorial {
+  background: #fff;
+  padding: 56px 0 64px;
+}
+#hero-trabalhe-editorial .tc-editorial-inner { max-width: 680px; }
+#hero-trabalhe-editorial .section-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+#hero-trabalhe-editorial h1 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.18;
+  color: var(--texto);
+  margin: 0 0 20px;
+}
+#hero-trabalhe-editorial p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin: 0 0 28px;
+}
+@media (max-width: 768px) {
+  #hero-trabalhe-editorial { padding: 40px 0 48px; }
+  #hero-trabalhe-editorial h1 { font-size: clamp(22px, 5vw, 30px); }
+  #hero-trabalhe-editorial p { font-size: 15px; }
+  #hero-trabalhe-editorial .btn {
+    display: block;
+    text-align: center;
+    padding: 15px 24px;
+  }
+}
+
+/* ----- Seções editoriais (cabeçalho comum) ----- */
+#por-que-trabalhar,
+#areas-atuacao { padding-top: 80px; padding-bottom: 88px; }
+.tc-head { max-width: 680px; }
+/* Áreas de atuação: largura maior para o título caber em uma linha no desktop */
+#areas-atuacao .tc-head { max-width: 860px; }
+.tc-head .section-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+.tc-h2 {
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.2;
+  color: var(--texto);
+  margin: 0 0 20px;
+}
+.tc-head .tc-h2:last-child { margin-bottom: 0; }
+.tc-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--texto-claro);
+  margin: 0;
+}
+
+/* ----- Listas editoriais (fundamentos, áreas) ----- */
+.tc-lista {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  column-gap: 48px;
+}
+.tc-lista-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tc-lista-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; }
+.tc-item {
+  padding: 24px 0 28px;
+  border-bottom: 1px solid var(--borda);
+}
+.tc-lista-3 .tc-item:nth-child(-n+3),
+.tc-lista-2 .tc-item:nth-child(-n+2) { border-top: 1px solid var(--borda); }
+.tc-num {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: var(--vermelho);
+  margin-bottom: 12px;
+}
+.tc-item-titulo {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--texto);
+  margin: 0 0 8px;
+}
+.tc-item-texto {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin: 0;
+}
+/* Tablet: 769px–1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tc-lista-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 40px;
+  }
+  .tc-lista-3 .tc-item:nth-child(3) { border-top: none; }
+  .tc-lista-2 { column-gap: 40px; }
+}
+/* Mobile: até 768px */
+@media (max-width: 768px) {
+  #por-que-trabalhar,
+  #areas-atuacao { padding-top: 56px; padding-bottom: 64px; }
+  .tc-h2 { font-size: clamp(20px, 4.5vw, 28px); }
+  .tc-intro { font-size: 15px; }
+  .tc-lista-3,
+  .tc-lista-2 {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 36px;
+  }
+  .tc-item { padding: 20px 0 22px; }
+  .tc-lista-3 .tc-item:nth-child(2),
+  .tc-lista-3 .tc-item:nth-child(3),
+  .tc-lista-2 .tc-item:nth-child(2) { border-top: none; }
+  .tc-item-texto { font-size: 14.5px; }
+}
+@media (max-width: 480px) {
+  #por-que-trabalhar,
+  #areas-atuacao { padding-top: 48px; padding-bottom: 56px; }
+}
+
+/* ----- Formulário ----- */
+#formulario { padding-top: 80px; padding-bottom: 88px; scroll-margin-top: 64px; }
+.tc-form-wrap { max-width: 800px; margin: 0 auto; }
+/* Desktop: mesmo eixo esquerdo das seções editoriais anteriores */
+@media (min-width: 1025px) {
+  .tc-form-wrap { margin-left: 0; }
+}
+.tc-form-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--texto-claro);
+  margin: 0;
+  max-width: 680px;
+}
+.tc-obrigatorios {
+  font-size: 13.5px;
+  color: var(--texto-claro);
+  margin: 32px 0 0;
+}
+.tc-grupo { margin-top: 32px; }
+.tc-grupo-titulo {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--texto);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--borda);
+}
+#formulario .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#formulario .form-field { min-width: 0; }
+#formulario .form-field input,
+#formulario .form-field select,
+#formulario .form-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+}
+#formulario .form-field textarea { min-height: 0; resize: vertical; }
+.tc-req { color: var(--vermelho); margin-left: 2px; }
+.tc-nowrap { white-space: nowrap; }
+.tc-ajuda {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--texto-claro);
+  margin: 0;
+}
+.tc-erro {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--vermelho-escuro);
+  margin: 0;
+}
+.tc-erro[hidden] { display: none; }
+
+/* Mobilidade (Sim/Não) */
+.tc-radio {
+  grid-column: 1 / -1;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.tc-radio legend {
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.tc-radio-opcoes { display: flex; gap: 32px; }
+.tc-radio-opcoes label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+.tc-radio-opcoes input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--vermelho);
+}
+.tc-radio-opcoes input:focus-visible {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+/* Localidade de interesse (condicional) */
+.tc-condicional {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.tc-condicional[hidden] { display: none; }
+
+/* Upload (simulado) */
+.tc-upload {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  border: 1px dashed var(--borda);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--texto-claro);
+  cursor: pointer;
+  text-align: center;
+  padding: 14px;
+}
+.tc-upload:hover { border-color: var(--vermelho); color: var(--vermelho); }
+.tc-upload:focus-within {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 1px;
+}
+#formulario .tc-upload input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  opacity: 0;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+}
+.tc-upload-nome {
+  font-size: 12.5px;
+  color: var(--texto);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.tc-upload-nome:empty { display: none; }
+
+/* Envio */
+.tc-acoes { margin-top: 32px; }
+.tc-privacidade {
+  font-size: 12.5px;
+  color: var(--texto-claro);
+  margin: 0;
+}
+#formulario .form-note {
+  font-weight: 600;
+  color: var(--texto);
+  margin: 8px 0 0;
+}
+.tc-acoes .btn { margin-top: 24px; }
+.form-success p { margin: 0; }
+.form-success p + p { margin-top: 6px; font-weight: 500; }
+@media (max-width: 768px) {
+  #formulario { padding-top: 56px; padding-bottom: 64px; }
+  .tc-form-intro { font-size: 15px; }
+  #formulario .form-grid,
+  .tc-condicional { grid-template-columns: minmax(0, 1fr); }
+  #formulario .tc-acoes .btn { display: block; width: 100%; padding: 15px 24px; }
+}
+@media (max-width: 480px) {
+  #formulario { padding-top: 48px; padding-bottom: 56px; }
+}
+</style>
 </head>
 <body>
 
@@ -34,136 +360,235 @@
   </header>
 
   <main>
-    <section class="hero" style="background-image:url('https://placehold.co/1600x900/3a2424/3a2424');">
-      <div class="hero-content">
-        <span class="eyebrow">Trabalhe Conosco</span>
-        <h1>Cresça com a gente em uma rede que está em todo o Brasil</h1>
-        <p>Conheça as oportunidades de carreira na Sol Magazine e candidate-se às nossas vagas.</p>
-        <div class="stats-bar" style="background:rgba(255,255,255,.08); margin-bottom:26px; padding:20px;">
-          <div class="stat"><div class="stat-num">+100</div><div class="stat-label">Lojas em operação</div></div>
-          <div class="stat"><div class="stat-num">14</div><div class="stat-label">Estados brasileiros</div></div>
-        </div>
-        <div class="hero-actions">
-          <a href="#formulario" class="btn btn-primary">Candidatar-se</a>
-        </div>
-      </div>
-    </section>
+    <!-- HERO: bloco fotográfico — área neutra provisória (fotografia real pendente) -->
+    <div id="hero-trabalhe-foto" aria-hidden="true">
+      <p class="tc-foto-pendente">Área reservada para a foto do Hero — imagem pendente</p>
+    </div>
 
-    <section class="section-alt">
+    <!-- HERO: bloco editorial -->
+    <section id="hero-trabalhe-editorial">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Como é Trabalhar Aqui</span>
-          <h2>Um time que cresce junto com a rede</h2>
-          <p>Valorizamos pessoas comprometidas com o crescimento contínuo, em um ambiente dinâmico e em constante expansão.</p>
+        <div class="tc-editorial-inner">
+          <span class="section-eyebrow">Trabalhe Conosco</span>
+          <h1>Construa sua trajetória junto com uma rede em expansão.</h1>
+          <p>A Sol Magazine está presente em 14 estados e continua crescendo. Se você quer fazer parte desse movimento, apresente seu perfil e conte em qual área gostaria de trabalhar.</p>
+          <a href="#formulario" class="btn btn-primary">Quero trabalhar na Sol Magazine &rarr;</a>
         </div>
       </div>
     </section>
 
-    <section class="section-tinted">
+    <!-- POR QUE TRABALHAR NA SOL MAGAZINE -->
+    <section class="section-alt" id="por-que-trabalhar">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Áreas de Atuação</span>
-          <h2>Onde você pode atuar na Sol Magazine</h2>
+        <div class="tc-head">
+          <span class="section-eyebrow">Por que trabalhar na Sol Magazine</span>
+          <h2 class="tc-h2">Faça parte de uma operação que continua crescendo</h2>
+          <p class="tc-intro">Com mais de 100 lojas distribuídas por 14 estados, a Sol Magazine reúne diferentes áreas e funções necessárias para manter a operação das lojas e apoiar a expansão da rede.</p>
         </div>
-        <div class="grid grid-4">
-          <div class="card"><h3>Loja</h3><p>Vendas, atendimento e operação de unidades.</p></div>
-          <div class="card"><h3>Logística</h3><p>Distribuição e abastecimento da rede.</p></div>
-          <div class="card"><h3>Administrativo</h3><p>Áreas de suporte corporativo.</p></div>
-          <div class="card"><h3>Expansão</h3><p>Apoio na abertura de novas unidades.</p></div>
-        </div>
+        <ol class="tc-lista tc-lista-3">
+          <li class="tc-item">
+            <span class="tc-num">01</span>
+            <h3 class="tc-item-titulo">Uma operação em escala</h3>
+            <p class="tc-item-texto">Fazer parte da Sol Magazine é integrar uma rede com mais de 100 lojas em operação e presença nas cinco regiões do Brasil.</p>
+          </li>
+          <li class="tc-item">
+            <span class="tc-num">02</span>
+            <h3 class="tc-item-titulo">Diferentes possibilidades de atuação</h3>
+            <p class="tc-item-texto">A operação reúne funções nas lojas e em áreas de apoio, criando diferentes possibilidades para quem deseja trabalhar na rede.</p>
+          </li>
+          <li class="tc-item">
+            <span class="tc-num">03</span>
+            <h3 class="tc-item-titulo">Uma rede em expansão</h3>
+            <p class="tc-item-texto">A abertura de novas unidades amplia a presença da Sol Magazine e também as necessidades de pessoas para sustentar sua operação.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section-alt">
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="section-tinted" id="areas-atuacao">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Histórias de Crescimento</span>
-          <h2>Trajetórias dentro da Sol Magazine</h2>
+        <div class="tc-head">
+          <span class="section-eyebrow">Áreas de atuação</span>
+          <h2 class="tc-h2">Onde você pode trabalhar na Sol Magazine</h2>
         </div>
-        <div class="grid grid-3">
-          <div class="card">
-            <h3>Colaborador(a) <span class="placeholder-tag">placeholder</span></h3>
-            <p>Depoimento real a ser inserido na versão final. <span class="placeholder-tag">placeholder</span></p>
-          </div>
-          <div class="card">
-            <h3>Colaborador(a)</h3>
-            <p>Comecei em uma função de loja e fui crescendo junto com a rede, assumindo novas responsabilidades a cada unidade que se abria. <span class="placeholder-tag">placeholder</span></p>
-          </div>
-          <div class="card">
-            <h3>Colaborador(a) <span class="placeholder-tag">placeholder</span></h3>
-            <p>Depoimento real a ser inserido na versão final. <span class="placeholder-tag">placeholder</span></p>
-          </div>
-        </div>
+        <ul class="tc-lista tc-lista-2">
+          <li class="tc-item">
+            <h3 class="tc-item-titulo">Lojas</h3>
+            <p class="tc-item-texto">Atendimento, vendas, organização, estoque e demais atividades que fazem parte da operação diária das nossas unidades.</p>
+          </li>
+          <li class="tc-item">
+            <h3 class="tc-item-titulo">Liderança de Loja</h3>
+            <p class="tc-item-texto">Funções de liderança e gestão responsáveis pelo acompanhamento das equipes e da operação das unidades.</p>
+          </li>
+          <li class="tc-item">
+            <h3 class="tc-item-titulo">Administrativo e Apoio</h3>
+            <p class="tc-item-texto">Áreas administrativas e de suporte que dão apoio à operação e à gestão da rede.</p>
+          </li>
+          <li class="tc-item">
+            <h3 class="tc-item-titulo">Expansão e Implantação</h3>
+            <p class="tc-item-texto">Atividades relacionadas à implantação de novas unidades e ao crescimento da presença da Sol Magazine.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="section-tinted">
-      <div class="container">
-        <div class="section-head left">
-          <span class="section-eyebrow">Processo Seletivo</span>
-          <h2>Como funciona a seleção</h2>
-        </div>
-        <div class="steps">
-          <div class="step"><div class="step-num">1</div><div><h3>Candidatura</h3><p>Envio do formulário com seus dados.</p></div></div>
-          <div class="step"><div class="step-num">2</div><div><h3>Triagem</h3><p>Análise do perfil para as vagas disponíveis.</p></div></div>
-          <div class="step"><div class="step-num">3</div><div><h3>Entrevista</h3><p>Conversa com o time de RH ou da loja.</p></div></div>
-          <div class="step"><div class="step-num">4</div><div><h3>Contratação</h3><p>Integração à equipe Sol Magazine.</p></div></div>
-        </div>
-      </div>
-    </section>
-
+    <!-- QUERO TRABALHAR NA SOL MAGAZINE + FORMULÁRIO -->
     <section class="section-alt" id="formulario">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Formulário de Candidatura</span>
-          <h2>Candidate-se a uma vaga</h2>
-        </div>
-        <div class="form-card" style="max-width:760px; margin:0 auto;">
-          <form data-prototype-form>
-            <div class="form-grid">
-              <div class="form-field"><label>Nome completo</label><input type="text" required></div>
-              <div class="form-field"><label>Telefone</label><input type="tel" required></div>
-              <div class="form-field"><label>E-mail</label><input type="email" required></div>
-              <div class="form-field"><label>Cidade Atual</label><input type="text"></div>
-              <div class="form-field"><label>Área de interesse</label>
-                <select>
-                  <option>Loja</option>
-                  <option>Logística</option>
-                  <option>Administrativo</option>
-                  <option>Expansão</option>
-                </select>
-              </div>
-              <div class="form-field"><label>Disponibilidade para Mudança</label>
-                <select>
-                  <option>Sim</option>
-                  <option>Não</option>
-                </select>
-              </div>
-              <div class="form-field"><label>Disponibilidade para Início</label>
-                <select>
-                  <option>Imediata</option>
-                  <option>Em até 15 dias</option>
-                  <option>Em até 30 dias</option>
-                </select>
-              </div>
-              <div class="form-field"><label>Currículo</label><input type="file"></div>
-              <div class="form-field full"><label>Experiência</label><textarea rows="3" placeholder="Resuma sua experiência profissional"></textarea></div>
-              <div class="form-field full"><label>Mensagem</label><textarea rows="4"></textarea></div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-32">Enviar candidatura</button>
-            <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
-          </form>
-          <div class="form-success">Candidatura enviada com sucesso. Boa sorte!</div>
-        </div>
-      </div>
-    </section>
+        <div class="tc-form-wrap">
+          <div class="tc-head">
+            <span class="section-eyebrow">Quero trabalhar na Sol Magazine</span>
+            <h2 class="tc-h2">Apresente seu perfil para a Sol Magazine</h2>
+            <p class="tc-form-intro">Preencha o cadastro com suas informações e indique onde e em qual área você gostaria de trabalhar. Seu perfil e currículo serão encaminhados para nossa equipe responsável e poderão ser considerados em oportunidades compatíveis.</p>
+          </div>
+          <div class="tc-form-corpo">
+            <form data-prototype-form id="tc-perfil">
+              <p class="tc-obrigatorios">Campos marcados com * são obrigatórios.</p>
 
-    <section class="section-tinted">
-      <div class="container">
-        <div class="cta-final" style="padding:40px 32px;">
-          <h2 style="font-size:22px;">Ainda não encontrou a vaga ideal?</h2>
-          <div class="cta-final-actions">
-            <a href="contato.html" class="btn btn-outline">Fale com nosso RH</a>
+              <!-- DADOS PESSOAIS E CONTATO -->
+              <div class="tc-grupo" role="group" aria-labelledby="tc-grupo-contato">
+                <h3 class="tc-grupo-titulo" id="tc-grupo-contato">Dados pessoais e contato</h3>
+                <div class="form-grid">
+                  <div class="form-field full"><label for="tc-nome">Nome completo<span class="tc-req" aria-hidden="true">*</span></label><input id="tc-nome" name="nome_completo" type="text" autocomplete="name" required></div>
+                  <div class="form-field"><label for="tc-telefone">Telefone/WhatsApp<span class="tc-req" aria-hidden="true">*</span></label><input id="tc-telefone" name="telefone_whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" required aria-describedby="tc-telefone-erro"><p class="tc-erro" id="tc-telefone-erro" hidden>Informe um telefone válido com DDD.</p></div>
+                  <div class="form-field"><label for="tc-email">E-mail<span class="tc-req" aria-hidden="true">*</span></label><input id="tc-email" name="email" type="email" autocomplete="email" required></div>
+                </div>
+              </div>
+
+              <!-- INTERESSE PROFISSIONAL -->
+              <div class="tc-grupo" role="group" aria-labelledby="tc-grupo-interesse">
+                <h3 class="tc-grupo-titulo" id="tc-grupo-interesse">Interesse profissional</h3>
+                <div class="form-grid">
+                  <div class="form-field"><label for="tc-estado-atual">Estado onde mora atualmente<span class="tc-req" aria-hidden="true">*</span></label>
+                    <select id="tc-estado-atual" name="estado_atual" autocomplete="address-level1" required>
+                      <option value="">Selecione</option>
+                      <option>AC</option>
+                      <option>AL</option>
+                      <option>AP</option>
+                      <option>AM</option>
+                      <option>BA</option>
+                      <option>CE</option>
+                      <option>DF</option>
+                      <option>ES</option>
+                      <option>GO</option>
+                      <option>MA</option>
+                      <option>MT</option>
+                      <option>MS</option>
+                      <option>MG</option>
+                      <option>PA</option>
+                      <option>PB</option>
+                      <option>PR</option>
+                      <option>PE</option>
+                      <option>PI</option>
+                      <option>RJ</option>
+                      <option>RN</option>
+                      <option>RS</option>
+                      <option>RO</option>
+                      <option>RR</option>
+                      <option>SC</option>
+                      <option>SP</option>
+                      <option>SE</option>
+                      <option>TO</option>
+                    </select>
+                  </div>
+                  <div class="form-field"><label for="tc-cidade-atual">Cidade onde mora atualmente<span class="tc-req" aria-hidden="true">*</span></label><input id="tc-cidade-atual" name="cidade_atual" type="text" autocomplete="address-level2" required></div>
+                  <div class="form-field full"><label for="tc-area">Área de interesse<span class="tc-req" aria-hidden="true">*</span></label>
+                    <select id="tc-area" name="area_interesse" required>
+                      <option value="">Selecione</option>
+                      <option>Lojas</option>
+                      <option>Liderança de Loja</option>
+                      <option>Administrativo e Apoio</option>
+                      <option>Expansão e Implantação</option>
+                    </select>
+                  </div>
+                  <fieldset class="tc-radio">
+                    <legend>Tem disponibilidade para trabalhar em outra <span class="tc-nowrap">cidade?<span class="tc-req" aria-hidden="true">*</span></span></legend>
+                    <div class="tc-radio-opcoes">
+                      <label><input type="radio" name="disponibilidade_outra_cidade" value="Não" required> Não</label>
+                      <label><input type="radio" name="disponibilidade_outra_cidade" value="Sim" required aria-controls="tc-localidade-interesse"> Sim</label>
+                    </div>
+                  </fieldset>
+                  <div class="tc-condicional" id="tc-localidade-interesse" hidden>
+                    <div class="form-field"><label for="tc-estado-interesse">Estado de interesse<span class="tc-req" aria-hidden="true">*</span></label>
+                      <select id="tc-estado-interesse" name="estado_interesse" disabled>
+                        <option value="">Selecione</option>
+                        <option>AC</option>
+                        <option>AL</option>
+                        <option>AP</option>
+                        <option>AM</option>
+                        <option>BA</option>
+                        <option>CE</option>
+                        <option>DF</option>
+                        <option>ES</option>
+                        <option>GO</option>
+                        <option>MA</option>
+                        <option>MT</option>
+                        <option>MS</option>
+                        <option>MG</option>
+                        <option>PA</option>
+                        <option>PB</option>
+                        <option>PR</option>
+                        <option>PE</option>
+                        <option>PI</option>
+                        <option>RJ</option>
+                        <option>RN</option>
+                        <option>RS</option>
+                        <option>RO</option>
+                        <option>RR</option>
+                        <option>SC</option>
+                        <option>SP</option>
+                        <option>SE</option>
+                        <option>TO</option>
+                      </select>
+                    </div>
+                    <div class="form-field"><label for="tc-cidade-interesse">Cidade de interesse<span class="tc-req" aria-hidden="true">*</span></label><input id="tc-cidade-interesse" name="cidade_interesse" type="text" disabled></div>
+                  </div>
+                  <div class="form-field full">
+                    <label for="tc-experiencia">Experiência profissional</label>
+                    <p class="tc-ajuda" id="tc-experiencia-ajuda">Se desejar, descreva brevemente suas experiências profissionais.</p>
+                    <textarea id="tc-experiencia" name="experiencia_profissional" rows="4" aria-describedby="tc-experiencia-ajuda"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CURRÍCULO -->
+              <div class="tc-grupo" role="group" aria-labelledby="tc-grupo-curriculo">
+                <h3 class="tc-grupo-titulo" id="tc-grupo-curriculo">Currículo</h3>
+                <div class="form-grid">
+                  <div class="form-field full">
+                    <label for="tc-curriculo">Currículo<span class="tc-req" aria-hidden="true">*</span></label>
+                    <p class="tc-ajuda" id="tc-curriculo-ajuda">Envie seu currículo em PDF ou Word.</p>
+                    <label class="tc-upload">
+                      <span aria-hidden="true">Selecionar arquivo</span>
+                      <input id="tc-curriculo" name="curriculo" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-describedby="tc-curriculo-ajuda tc-curriculo-nome tc-curriculo-erro">
+                    </label>
+                    <p class="tc-upload-nome" id="tc-curriculo-nome" aria-live="polite"></p>
+                    <p class="tc-erro" id="tc-curriculo-erro" aria-live="polite" hidden></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- INFORMAÇÕES ADICIONAIS -->
+              <div class="tc-grupo" role="group" aria-labelledby="tc-grupo-info">
+                <h3 class="tc-grupo-titulo" id="tc-grupo-info">Informações adicionais</h3>
+                <div class="form-grid">
+                  <div class="form-field full"><label for="tc-info">Informações adicionais</label><textarea id="tc-info" name="informacoes_adicionais" rows="4"></textarea></div>
+                </div>
+              </div>
+
+              <div class="tc-acoes">
+                <p class="tc-privacidade">Os dados informados serão utilizados para contato e para avaliação de oportunidades profissionais relacionadas à Sol Magazine.</p>
+                <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
+                <button type="submit" class="btn btn-primary">Enviar meu currículo</button>
+              </div>
+            </form>
+            <div role="status" aria-live="polite">
+              <div class="form-success">
+                <p>Currículo recebido.</p>
+                <p>Suas informações foram encaminhadas para nossa equipe responsável e poderão ser consideradas em oportunidades profissionais compatíveis com o perfil informado.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -217,5 +642,92 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+  // Formulário de perfil profissional (protótipo): telefone, mobilidade condicional, currículo e mensagem de sucesso
+  (function () {
+    var form = document.getElementById('tc-perfil');
+    if (!form) return;
+    var sucesso = form.parentElement.querySelector('.form-success');
+    var telefone = document.getElementById('tc-telefone');
+    var mobilidade = form.querySelectorAll('input[name="disponibilidade_outra_cidade"]');
+    var localidade = document.getElementById('tc-localidade-interesse');
+    var condicionais = [document.getElementById('tc-estado-interesse'), document.getElementById('tc-cidade-interesse')];
+    var curriculo = document.getElementById('tc-curriculo');
+    var curriculoNome = document.getElementById('tc-curriculo-nome');
+    var curriculoErro = document.getElementById('tc-curriculo-erro');
+
+    // Telefone: máscara (00) 0000-0000 ou (00) 00000-0000 durante a digitação
+    function mascararTelefone(valor) {
+      var d = valor.replace(/\D/g, '').slice(0, 11);
+      if (d.length > 10) return d.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      if (d.length > 6) return d.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      if (d.length > 2) return d.replace(/^(\d{2})(\d{0,4})$/, '($1) $2');
+      if (d.length > 0) return d.replace(/^(\d{0,2})$/, '($1');
+      return '';
+    }
+    // Telefone completo: 10 (fixo) ou 11 (celular) dígitos, incluindo o DDD
+    var telefoneErro = document.getElementById('tc-telefone-erro');
+    function validarTelefone() {
+      var digitos = telefone.value.replace(/\D/g, '').length;
+      var invalido = digitos > 0 && (digitos < 10 || digitos > 11);
+      telefone.setCustomValidity(invalido ? 'Informe um telefone válido com DDD.' : '');
+      if (!invalido && digitos > 0) telefoneErro.hidden = true;
+    }
+    telefone.addEventListener('input', function () {
+      var formatado = mascararTelefone(telefone.value);
+      if (formatado !== telefone.value) telefone.value = formatado;
+      validarTelefone();
+    });
+    telefone.addEventListener('blur', function () {
+      if (!telefone.validity.valid && telefone.value !== '') telefoneErro.hidden = false;
+    });
+    telefone.addEventListener('invalid', function () { telefoneErro.hidden = false; });
+
+    // Mobilidade: Estado/Cidade de interesse só existem (e são obrigatórios) quando a resposta é "Sim"
+    function atualizarLocalidade() {
+      var sim = Array.prototype.some.call(mobilidade, function (r) { return r.checked && r.value === 'Sim'; });
+      localidade.hidden = !sim;
+      condicionais.forEach(function (campo) {
+        campo.disabled = !sim;
+        campo.required = sim;
+        if (!sim) campo.value = '';
+      });
+    }
+    mobilidade.forEach(function (r) { r.addEventListener('change', atualizarLocalidade); });
+
+    // Currículo: obrigatório, somente PDF, DOC ou DOCX (validação apenas no navegador)
+    var FORMATOS = /\.(pdf|docx?)$/i;
+    var TIPOS = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    function validarCurriculo() {
+      var arquivo = curriculo.files[0];
+      var msg = '';
+      if (arquivo && !FORMATOS.test(arquivo.name) && TIPOS.indexOf(arquivo.type) === -1) {
+        msg = 'Envie seu currículo em PDF ou Word.';
+      }
+      curriculo.setCustomValidity(msg);
+      curriculoErro.textContent = msg;
+      curriculoErro.hidden = !msg;
+      curriculoNome.textContent = arquivo ? 'Arquivo selecionado: ' + arquivo.name : '';
+    }
+    curriculo.addEventListener('change', validarCurriculo);
+
+    // Novo preenchimento oculta a mensagem de um envio anterior
+    function ocultarSucesso() { if (sucesso) sucesso.classList.remove('show'); }
+    form.addEventListener('input', ocultarSucesso);
+    form.addEventListener('change', ocultarSucesso);
+
+    // Após o reset (feito pelo envio simulado em script.js), restaura o estado inicial
+    form.addEventListener('reset', function () {
+      setTimeout(function () {
+        atualizarLocalidade();
+        validarCurriculo();
+        validarTelefone();
+        telefoneErro.hidden = true;
+      }, 0);
+    });
+
+    atualizarLocalidade();
+  })();
+  </script>
 </body>
 </html>
