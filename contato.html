@@ -5,6 +5,223 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contato | Sol Magazine</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+/* ===== CONTATO — CSS SCOPED ===== */
+
+/* ----- Hero: bloco fotográfico ----- */
+/* PENDENTE: fotografia real do Hero ainda não definida.
+   Ao receber os assets, aplicar background-image em cada faixa abaixo
+   (desktop / tablet / mobile), definir background-position conforme a foto
+   e remover a área neutra. */
+#hero-contato-foto {
+  width: 100%;
+  height: 540px;
+  background-color: #ece4e2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Tablet: 481px–1024px */
+@media (min-width: 481px) and (max-width: 1024px) {
+  #hero-contato-foto { height: 440px; }
+}
+/* Mobile: até 480px */
+@media (max-width: 480px) {
+  #hero-contato-foto { height: 460px; }
+}
+.ct-foto-pendente {
+  margin: 0;
+  padding: 0 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto-claro);
+  text-align: center;
+}
+
+/* ----- Hero: bloco editorial ----- */
+#hero-contato-editorial {
+  background: #fff;
+  padding: 56px 0 64px;
+}
+#hero-contato-editorial .ct-editorial-inner { max-width: 680px; }
+#hero-contato-editorial .section-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+#hero-contato-editorial h1 {
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.18;
+  color: var(--texto);
+  margin: 0 0 20px;
+}
+#hero-contato-editorial p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  #hero-contato-editorial { padding: 40px 0 48px; }
+  #hero-contato-editorial h1 { font-size: clamp(22px, 5vw, 30px); }
+  #hero-contato-editorial p { font-size: 15px; }
+}
+
+/* ----- Seções (canais e formulário) ----- */
+#canais-contato,
+#formulario-contato { padding-top: 80px; padding-bottom: 88px; }
+#formulario-contato { scroll-margin-top: 64px; }
+/* Mesmo eixo esquerdo do Hero editorial em todas as larguras */
+.ct-wrap { max-width: 800px; }
+.ct-head { max-width: 680px; }
+.ct-h2 {
+  font-size: clamp(22px, 2.6vw, 34px);
+  line-height: 1.2;
+  color: var(--texto);
+  margin: 0 0 20px;
+}
+.ct-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--texto-claro);
+  margin: 0;
+}
+
+/* ----- Canais de contato: lista de direcionamento ----- */
+.ct-canais {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--borda);
+}
+.ct-canal a {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 4px;
+  border-bottom: 1px solid var(--borda);
+  transition: background .15s;
+}
+.ct-canal-corpo {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+  column-gap: 32px;
+  align-items: baseline;
+}
+.ct-canal-titulo {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--texto);
+  margin: 0;
+  transition: color .15s;
+}
+.ct-canal-texto {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--texto-claro);
+  margin: 0;
+}
+.ct-canal-seta {
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vermelho);
+  transition: transform .15s;
+}
+.ct-canal a:hover .ct-canal-titulo { color: var(--vermelho); }
+.ct-canal a:hover .ct-canal-seta { transform: translateX(4px); }
+.ct-canal a:focus-visible {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+/* ----- Formulário ----- */
+.ct-obrigatorios {
+  font-size: 13.5px;
+  color: var(--texto-claro);
+  margin: 32px 0 20px;
+}
+#formulario-contato .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#formulario-contato .form-field { min-width: 0; }
+#formulario-contato .form-field input,
+#formulario-contato .form-field select,
+#formulario-contato .form-field textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+}
+#formulario-contato .form-field textarea { min-height: 0; resize: vertical; }
+.ct-req { color: var(--vermelho); margin-left: 2px; }
+.ct-erro {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--vermelho-escuro);
+  margin: 0;
+}
+.ct-erro[hidden] { display: none; }
+
+/* Orientação contextual por assunto */
+.ct-orientacao {
+  grid-column: 1 / -1;
+  background: var(--bg-claro);
+  border-left: 3px solid var(--vermelho);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--texto);
+}
+.ct-orientacao[hidden] { display: none; }
+.ct-orientacao p { margin: 0; }
+.ct-orientacao a {
+  font-weight: 700;
+  color: var(--vermelho);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.ct-orientacao a:hover { color: var(--vermelho-escuro); }
+
+/* Envio */
+.ct-acoes { margin-top: 32px; }
+.ct-privacidade {
+  font-size: 12.5px;
+  color: var(--texto-claro);
+  margin: 0;
+}
+#formulario-contato .form-note {
+  font-weight: 600;
+  color: var(--texto);
+  margin: 8px 0 0;
+}
+.ct-acoes .btn { margin-top: 24px; }
+.form-success p { margin: 0; }
+
+/* Tablet: 769px–1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ct-canal-corpo { grid-template-columns: minmax(0, 200px) minmax(0, 1fr); column-gap: 24px; }
+}
+/* Mobile: até 768px */
+@media (max-width: 768px) {
+  #canais-contato,
+  #formulario-contato { padding-top: 56px; padding-bottom: 64px; }
+  .ct-h2 { font-size: clamp(20px, 4.5vw, 28px); }
+  .ct-intro { font-size: 15px; }
+  .ct-canais { margin-top: 36px; }
+  .ct-canal a { padding: 20px 2px 22px; gap: 16px; }
+  .ct-canal-corpo { grid-template-columns: minmax(0, 1fr); row-gap: 6px; }
+  .ct-canal-texto { font-size: 14.5px; }
+  #formulario-contato .form-grid { grid-template-columns: minmax(0, 1fr); }
+  #formulario-contato .ct-acoes .btn { display: block; width: 100%; padding: 15px 24px; }
+}
+@media (max-width: 480px) {
+  #canais-contato,
+  #formulario-contato { padding-top: 48px; padding-bottom: 56px; }
+}
+</style>
 </head>
 <body>
 
@@ -34,94 +251,127 @@
   </header>
 
   <main>
-    <section class="hero hero-neutro" style="background-image:url('https://placehold.co/1600x900/3a2424/3a2424'); min-height:340px;">
-      <div class="hero-content">
-        <span class="eyebrow">Contato</span>
-        <h1>Fale com a Sol Magazine.</h1>
-        <p>Direcionamos sua mensagem para a área responsável.</p>
+    <!-- HERO: bloco fotográfico — área neutra provisória (fotografia real pendente) -->
+    <div id="hero-contato-foto" aria-hidden="true">
+      <p class="ct-foto-pendente">Área reservada para a foto do Hero — imagem pendente</p>
+    </div>
+
+    <!-- HERO: bloco editorial -->
+    <section id="hero-contato-editorial">
+      <div class="container">
+        <div class="ct-editorial-inner">
+          <span class="section-eyebrow">Contato</span>
+          <h1>Fale com a Sol Magazine.</h1>
+          <p>Direcionamos sua mensagem para a área responsável.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section-alt">
+    <!-- CANAIS DE CONTATO -->
+    <section class="section-tinted" id="canais-contato">
       <div class="container">
-        <div class="section-head">
-          <span class="section-eyebrow">Canais por Assunto</span>
-          <h2>Fale diretamente com o time responsável</h2>
-        </div>
-        <div class="canais-grid">
-          <div class="card">
-            <span class="badge">Investidores</span>
-            <h3 class="mt-32">Expansão e Investimento</h3>
-            <p>expansao@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
+        <div class="ct-wrap">
+          <div class="ct-head">
+            <h2 class="ct-h2">Como podemos ajudar?</h2>
+            <p class="ct-intro">Escolha o assunto que melhor corresponde ao seu interesse.</p>
           </div>
-          <div class="card">
-            <span class="badge">Proprietários</span>
-            <h3 class="mt-32">Imóveis</h3>
-            <p>imoveis@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
-          </div>
-          <div class="card">
-            <span class="badge">Fornecedores</span>
-            <h3 class="mt-32">Fornecedores</h3>
-            <p>fornecedores@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
-          </div>
-          <div class="card">
-            <span class="badge">Carreiras</span>
-            <h3 class="mt-32">RH e Carreiras</h3>
-            <p>rh@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
-          </div>
-          <div class="card">
-            <span class="badge">Geral</span>
-            <h3 class="mt-32">Contato Geral</h3>
-            <p>contato@solmagazine.com.br <span class="placeholder-tag">placeholder</span></p>
-          </div>
-        </div>
-
-        <div class="contato-layout">
-          <div>
-            <div class="form-card">
-              <h3>Formulário único de contato</h3>
-              <form data-prototype-form class="mt-32">
-                <div class="form-grid">
-                  <div class="form-field"><label>Nome completo</label><input type="text" required></div>
-                  <div class="form-field"><label>E-mail</label><input type="email" required></div>
-                  <div class="form-field"><label>Telefone</label><input type="tel"></div>
-                  <div class="form-field"><label>Empresa / Organização (opcional)</label><input type="text"></div>
-                  <div class="form-field"><label>Assunto</label>
-                    <select>
-                      <option>Expansão e Investimento</option>
-                      <option>Imóveis</option>
-                      <option>Fornecedores</option>
-                      <option>RH e Carreiras</option>
-                      <option>Contato Geral</option>
-                    </select>
-                  </div>
-                  <div class="form-field full"><label>Mensagem</label><textarea rows="5" required></textarea></div>
+          <ul class="ct-canais">
+            <li class="ct-canal">
+              <a href="expansao.html">
+                <div class="ct-canal-corpo">
+                  <h3 class="ct-canal-titulo">Expansão e Investimento</h3>
+                  <p class="ct-canal-texto">Informações sobre oportunidades de expansão e investimento na Sol Magazine.</p>
                 </div>
-                <button type="submit" class="btn btn-primary mt-32">Enviar mensagem</button>
+                <span class="ct-canal-seta" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            <li class="ct-canal">
+              <a href="imoveis.html">
+                <div class="ct-canal-corpo">
+                  <h3 class="ct-canal-titulo">Imóveis</h3>
+                  <p class="ct-canal-texto">Apresente imóveis comerciais para possível instalação de novas lojas.</p>
+                </div>
+                <span class="ct-canal-seta" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            <li class="ct-canal">
+              <a href="fornecedores.html">
+                <div class="ct-canal-corpo">
+                  <h3 class="ct-canal-titulo">Fornecedores</h3>
+                  <p class="ct-canal-texto">Apresente sua empresa e seus produtos para a Sol Magazine.</p>
+                </div>
+                <span class="ct-canal-seta" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            <li class="ct-canal">
+              <a href="trabalhe-conosco.html">
+                <div class="ct-canal-corpo">
+                  <h3 class="ct-canal-titulo">Trabalhe Conosco</h3>
+                  <p class="ct-canal-texto">Conheça nosso canal para apresentação de perfis profissionais.</p>
+                </div>
+                <span class="ct-canal-seta" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            <li class="ct-canal">
+              <a href="#formulario-contato">
+                <div class="ct-canal-corpo">
+                  <h3 class="ct-canal-titulo">Contato Geral</h3>
+                  <p class="ct-canal-texto">Para outros assuntos e informações institucionais.</p>
+                </div>
+                <span class="ct-canal-seta" aria-hidden="true">&darr;</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO -->
+    <section class="section-alt" id="formulario-contato">
+      <div class="container">
+        <div class="ct-wrap">
+          <div class="ct-head">
+            <h2 class="ct-h2">Envie sua mensagem</h2>
+            <p class="ct-intro">Para assuntos gerais ou outras solicitações, preencha o formulário abaixo.</p>
+          </div>
+          <div class="ct-form-corpo">
+            <form data-prototype-form id="ct-mensagem">
+              <p class="ct-obrigatorios">Campos marcados com * são obrigatórios.</p>
+              <div class="form-grid">
+                <div class="form-field full"><label for="ct-nome">Nome completo<span class="ct-req" aria-hidden="true">*</span></label><input id="ct-nome" name="nome_completo" type="text" autocomplete="name" required></div>
+                <div class="form-field"><label for="ct-email">E-mail<span class="ct-req" aria-hidden="true">*</span></label><input id="ct-email" name="email" type="email" autocomplete="email" required aria-describedby="ct-email-erro"><p class="ct-erro" id="ct-email-erro" hidden>Informe um e-mail válido.</p></div>
+                <div class="form-field"><label for="ct-telefone">Telefone/WhatsApp<span class="ct-req" aria-hidden="true">*</span></label><input id="ct-telefone" name="telefone_whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" required aria-describedby="ct-telefone-erro"><p class="ct-erro" id="ct-telefone-erro" hidden>Informe um telefone válido com DDD.</p></div>
+                <div class="form-field"><label for="ct-empresa">Empresa/Organização</label><input id="ct-empresa" name="empresa_organizacao" type="text" autocomplete="organization"></div>
+                <div class="form-field"><label for="ct-assunto">Assunto<span class="ct-req" aria-hidden="true">*</span></label>
+                  <select id="ct-assunto" name="assunto" required aria-describedby="ct-orientacao">
+                    <option value="">Selecione o assunto</option>
+                    <option>Contato Geral</option>
+                    <option>Expansão e Investimento</option>
+                    <option>Imóveis</option>
+                    <option>Fornecedores</option>
+                    <option>Trabalhe Conosco</option>
+                  </select>
+                </div>
+                <div class="ct-orientacao" id="ct-orientacao" aria-live="polite" hidden>
+                  <p>Para este assunto, você também pode utilizar nossa página específica: <a id="ct-orientacao-link"></a>. Ou, se preferir, continue por este formulário.</p>
+                </div>
+                <div class="form-field full"><label for="ct-mensagem-texto">Mensagem<span class="ct-req" aria-hidden="true">*</span></label><textarea id="ct-mensagem-texto" name="mensagem" rows="6" required></textarea></div>
+              </div>
+
+              <div class="ct-acoes">
+                <p class="ct-privacidade">Os dados informados serão utilizados para responder à sua mensagem e encaminhar sua solicitação à área responsável da Sol Magazine.</p>
                 <p class="form-note">Protótipo de validação — este formulário não envia dados reais.</p>
-              </form>
-              <div class="form-success">Mensagem enviada com sucesso. Em breve retornaremos o contato.</div>
+                <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+              </div>
+            </form>
+            <div role="status" aria-live="polite">
+              <div class="form-success">
+                <!-- Mensagem homologada para a futura integração real (não usar enquanto o envio for simulado):
+                     "Mensagem registrada neste formulário. Suas informações serão encaminhadas à equipe responsável." -->
+                <p>Simulação concluída. Nenhuma informação foi enviada.</p>
+              </div>
             </div>
           </div>
-
-          <aside>
-            <div class="sidebar-card">
-              <h4>Sol Magazine</h4>
-              <p>Razão social: Sol Magazine Participações Ltda.</p>
-              <p>Sede: Cidade/Estado <span class="placeholder-tag">placeholder</span></p>
-              <p>Endereço da sede <span class="placeholder-tag">placeholder</span></p>
-              <p>Horário de atendimento <span class="placeholder-tag">placeholder</span></p>
-              <p>CNPJ: 00.000.000/0000-00 <span class="placeholder-tag">placeholder</span></p>
-            </div>
-            <div class="sidebar-card">
-              <h4>Redes Sociais</h4>
-              <div class="social-row">
-                <a href="#" aria-label="Instagram">IG</a>
-                <a href="#" aria-label="LinkedIn">IN</a>
-              </div>
-              <p class="form-note mt-32">Handles definitivos a confirmar <span class="placeholder-tag">placeholder</span></p>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -174,5 +424,98 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script>
+  // Formulário de contato (protótipo): e-mail, telefone, orientação por assunto e mensagem de sucesso
+  (function () {
+    var form = document.getElementById('ct-mensagem');
+    if (!form) return;
+    var sucesso = form.parentElement.querySelector('.form-success');
+    var email = document.getElementById('ct-email');
+    var emailErro = document.getElementById('ct-email-erro');
+    var telefone = document.getElementById('ct-telefone');
+    var telefoneErro = document.getElementById('ct-telefone-erro');
+    var assunto = document.getElementById('ct-assunto');
+    var orientacao = document.getElementById('ct-orientacao');
+    var orientacaoLink = document.getElementById('ct-orientacao-link');
+
+    // E-mail: além da validação nativa, exige domínio com ponto (ex.: nome@empresa.com.br)
+    var FORMATO_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    function validarEmail() {
+      var invalido = email.value !== '' && !FORMATO_EMAIL.test(email.value);
+      email.setCustomValidity(invalido ? 'Informe um e-mail válido.' : '');
+      if (email.validity.valid || email.value === '') emailErro.hidden = true;
+    }
+    email.addEventListener('input', validarEmail);
+    email.addEventListener('blur', function () {
+      if (!email.validity.valid && email.value !== '') emailErro.hidden = false;
+    });
+    email.addEventListener('invalid', function () {
+      if (email.value !== '') emailErro.hidden = false;
+    });
+
+    // Telefone: máscara (00) 0000-0000 ou (00) 00000-0000 durante a digitação
+    function mascararTelefone(valor) {
+      var d = valor.replace(/\D/g, '').slice(0, 11);
+      if (d.length > 10) return d.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      if (d.length > 6) return d.replace(/^(\d{2})(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      if (d.length > 2) return d.replace(/^(\d{2})(\d{0,4})$/, '($1) $2');
+      if (d.length > 0) return d.replace(/^(\d{0,2})$/, '($1');
+      return '';
+    }
+    // Telefone completo: 10 (fixo) ou 11 (celular) dígitos, incluindo o DDD
+    function validarTelefone() {
+      var digitos = telefone.value.replace(/\D/g, '').length;
+      var invalido = digitos > 0 && (digitos < 10 || digitos > 11);
+      telefone.setCustomValidity(invalido ? 'Informe um telefone válido com DDD.' : '');
+      if (!invalido) telefoneErro.hidden = true;
+    }
+    telefone.addEventListener('input', function () {
+      var formatado = mascararTelefone(telefone.value);
+      if (formatado !== telefone.value) telefone.value = formatado;
+      validarTelefone();
+    });
+    telefone.addEventListener('blur', function () {
+      if (!telefone.validity.valid && telefone.value !== '') telefoneErro.hidden = false;
+    });
+    telefone.addEventListener('invalid', function () {
+      if (telefone.value !== '') telefoneErro.hidden = false;
+    });
+
+    // Assunto: indica a página específica, quando existir, sem impedir o envio por este formulário
+    var PAGINAS = {
+      'Expansão e Investimento': { href: 'expansao.html', texto: 'Projeto de Expansão' },
+      'Imóveis': { href: 'imoveis.html', texto: 'Imóveis' },
+      'Fornecedores': { href: 'fornecedores.html', texto: 'Fornecedores' },
+      'Trabalhe Conosco': { href: 'trabalhe-conosco.html', texto: 'Trabalhe Conosco' }
+    };
+    function atualizarOrientacao() {
+      var pagina = PAGINAS[assunto.value];
+      orientacao.hidden = !pagina;
+      if (pagina) {
+        orientacaoLink.href = pagina.href;
+        orientacaoLink.textContent = pagina.texto;
+      }
+    }
+    assunto.addEventListener('change', atualizarOrientacao);
+
+    // Novo preenchimento oculta a mensagem de um envio anterior
+    function ocultarSucesso() { if (sucesso) sucesso.classList.remove('show'); }
+    form.addEventListener('input', ocultarSucesso);
+    form.addEventListener('change', ocultarSucesso);
+
+    // Após o reset (feito pelo envio simulado em script.js), restaura o estado inicial
+    form.addEventListener('reset', function () {
+      setTimeout(function () {
+        validarEmail();
+        validarTelefone();
+        emailErro.hidden = true;
+        telefoneErro.hidden = true;
+        atualizarOrientacao();
+      }, 0);
+    });
+
+    atualizarOrientacao();
+  })();
+  </script>
 </body>
 </html>
