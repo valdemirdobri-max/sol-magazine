@@ -23,6 +23,12 @@
     background: linear-gradient(to bottom, rgba(10,5,5,0.70) 0%, rgba(10,5,5,0.45) 40%, rgba(10,5,5,0.20) 70%, transparent 100%);
   }
 }
+/* Como Operamos — grade 2 × 2 no desktop (até 920px segue uma coluna, via styles.css) */
+@media (min-width: 921px) {
+  #home-como-operamos .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 </style>
 </head>
 <body>
@@ -150,7 +156,7 @@
             <p style="color:var(--texto-claro);">A Sol Magazine é uma rede nacional de varejo popular, construída a partir de uma operação simples, padronizada e orientada à expansão.</p>
             <a href="quem-somos.html" class="btn btn-secondary mt-32">Conhecer nossa história</a>
           </div>
-          <div class="gallery" style="grid-template-columns:repeat(2,1fr);">
+          <div class="gallery" style="grid-template-columns:repeat(2,minmax(0,1fr));">
             <div class="gallery-item">Foto institucional <span class="placeholder-tag">placeholder</span></div>
             <div class="gallery-item">Foto de loja <span class="placeholder-tag">placeholder</span></div>
           </div>
@@ -174,7 +180,7 @@
     </section>
 
     <!-- COMO OPERAMOS -->
-    <section class="section-tinted">
+    <section class="section-tinted" id="home-como-operamos">
       <div class="container">
         <div class="section-head">
           <span class="section-eyebrow">Como Operamos</span>
