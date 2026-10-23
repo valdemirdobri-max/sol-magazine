@@ -29,6 +29,33 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Quem Somos (resumo) — fotografias nas posições da galeria; tarja reutiliza .review-ribbon (styles.css) */
+.qs-foto {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+.qs-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Tarja proporcional aos cards menores: sempre em uma linha */
+.qs-foto .review-ribbon {
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: .06em;
+  padding: 6px 4px;
+  white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .qs-foto .review-ribbon {
+    font-size: 9.5px;
+    letter-spacing: .04em;
+    padding: 5px 3px;
+  }
+}
 </style>
 </head>
 <body>
@@ -157,8 +184,8 @@
             <a href="quem-somos.html" class="btn btn-secondary mt-32">Conhecer nossa história</a>
           </div>
           <div class="gallery" style="grid-template-columns:repeat(2,minmax(0,1fr));">
-            <div class="gallery-item">Foto institucional <span class="placeholder-tag">placeholder</span></div>
-            <div class="gallery-item">Foto de loja <span class="placeholder-tag">placeholder</span></div>
+            <div class="gallery-item qs-foto"><img src="assets/images/home-quem-somos/institucional-21.jpg" alt="Interior de loja com clientes — Sol Magazine" loading="lazy"><span class="review-ribbon">A SER SUBSTITUÍDA</span></div>
+            <div class="gallery-item qs-foto"><img src="assets/images/home-quem-somos/loja-49.jpg" alt="Fachada de loja — Sol Magazine" loading="lazy"></div>
           </div>
         </div>
       </div>
