@@ -138,17 +138,15 @@
 }
 .pn-corpo {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: minmax(0, 500px) minmax(200px, 260px);
+  justify-content: center;
   gap: 56px;
-  align-items: start;
+  align-items: center;
 }
 .pn-mapa svg {
   width: 100%;
   height: auto;
   display: block;
-}
-.pn-lista-wrap {
-  padding-top: 8px;
 }
 .pn-lista-titulo {
   font-size: 11px;
@@ -175,11 +173,17 @@
 .pn-lista li::before {
   content: '';
   position: absolute;
-  left: 0; top: 50%;
+  left: 0; top: 0.7em;
   transform: translateY(-50%);
   width: 5px; height: 5px;
   border-radius: 50%;
   background: var(--vermelho);
+}
+@media (max-width: 920px) {
+  .pn-corpo {
+    grid-template-columns: minmax(0, 1fr) minmax(170px, 210px);
+    gap: 32px;
+  }
 }
 @media (max-width: 768px) {
   #presenca-nacional-resumo {
@@ -188,12 +192,17 @@
   }
   .pn-corpo {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
+  }
+  .pn-mapa {
+    max-width: 440px;
+    width: 100%;
+    margin: 0 auto;
   }
   .pn-lista {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px 24px;
+    gap: 8px 16px;
   }
 }
 
