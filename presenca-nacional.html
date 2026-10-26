@@ -24,6 +24,14 @@
   #hero-presenca-nacional::before {
     background: linear-gradient(to bottom, rgba(5,2,2,0.80) 0%, rgba(5,2,2,0.55) 38%, rgba(5,2,2,0.28) 65%, rgba(5,2,2,0.10) 100%);
   }
+  /* Legibilidade do texto sobre a fotografia: sombra localizada, sem escurecer a imagem */
+  #hero-presenca-nacional h1 {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+  }
+  #hero-presenca-nacional .hero-content p {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.65), 0 0 10px rgba(0,0,0,0.45);
+  }
 }
 
 /* ===== MAPA NACIONAL ===== */
@@ -35,7 +43,7 @@
   margin-bottom: 48px;
 }
 .mn-mapa-wrap {
-  max-width: 560px;
+  max-width: 500px;
   margin: 0 auto;
 }
 .mn-mapa-wrap svg {
@@ -49,7 +57,7 @@
     padding-bottom: 56px;
   }
   .mn-mapa-wrap {
-    max-width: 100%;
+    max-width: 440px;
   }
 }
 
@@ -79,28 +87,16 @@
   margin-bottom: 16px;
 }
 .cr-nome {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--texto-claro);
-  margin: 0 0 10px;
+  letter-spacing: 0.06em;
+  color: var(--titulo);
+  margin: 0 0 8px;
   line-height: 1.3;
 }
-.cr-num {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--titulo);
-  line-height: 1;
-  margin: 0 0 3px;
-}
-.cr-label {
-  font-size: 13px;
-  color: var(--texto-claro);
-  margin: 0 0 16px;
-}
 .cr-estados {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--texto-claro);
   line-height: 1.9;
   margin: 0;
@@ -139,28 +135,6 @@
     padding-bottom: 0;
   }
 }
-/* Mobile: 1 coluna */
-@media (max-width: 480px) {
-  .cr-grid {
-    grid-template-columns: 1fr;
-  }
-  .cr-item {
-    padding: 24px 0 0 0;
-  }
-  .cr-item:first-child { padding-top: 0; }
-  .cr-item:nth-child(even) {
-    padding-left: 0;
-    border-left: none;
-  }
-  .cr-item + .cr-item {
-    border-top: 1px solid var(--borda);
-  }
-  .cr-item:last-child {
-    max-width: 100%;
-    grid-column: auto;
-    padding-bottom: 0;
-  }
-}
 
 /* ===== PRESENÇA POR ESTADO ===== */
 #presenca-por-estado {
@@ -170,66 +144,47 @@
 #presenca-por-estado .section-head {
   margin-bottom: 40px;
 }
-.pe-tabela-wrap {
-  max-width: 600px;
+.pe-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px 32px;
 }
-table.pe-tabela {
-  width: 100%;
-  border-collapse: collapse;
+.pe-lista li {
   font-size: 15px;
-}
-table.pe-tabela thead th {
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--texto-claro);
-  padding: 0 0 14px;
-  border-bottom: 2px solid var(--borda);
-  text-align: left;
-}
-table.pe-tabela thead th:last-child {
-  text-align: right;
-}
-table.pe-tabela tbody tr {
-  border-bottom: 1px solid var(--borda);
-}
-table.pe-tabela tbody td {
-  padding: 13px 0;
   color: var(--titulo);
-  font-size: 14.5px;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
 }
-table.pe-tabela tbody td:last-child {
-  text-align: right;
-  font-weight: 600;
-  color: var(--titulo);
+.pe-lista li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.7em;
+  transform: translateY(-50%);
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--vermelho);
 }
-table.pe-tabela tfoot tr {
-  border-top: 2px solid var(--borda);
-}
-table.pe-tabela tfoot td {
-  padding: 14px 0 0;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--titulo);
-}
-table.pe-tabela tfoot td:last-child {
-  text-align: right;
-  color: var(--vermelho);
-  font-size: 16px;
+@media (max-width: 920px) {
+  .pe-lista {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 24px;
+  }
 }
 @media (max-width: 768px) {
   #presenca-por-estado {
     padding-top: 52px;
     padding-bottom: 56px;
   }
-  .pe-tabela-wrap {
-    max-width: 100%;
+  .pe-lista {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 16px;
   }
-  table.pe-tabela {
-    font-size: 14px;
-  }
-  table.pe-tabela tbody td {
+  .pe-lista li {
     font-size: 14px;
   }
 }
@@ -300,7 +255,7 @@ table.pe-tabela tfoot td:last-child {
       <div class="hero-content">
         <span class="eyebrow">Presença Nacional</span>
         <h1>De norte a sul, uma operação cada vez mais presente</h1>
-        <p>Conheça os 14 estados onde a Sol Magazine já está presente e as regiões onde continuamos crescendo.</p>
+        <p>Conheça os 14 estados onde a Sol Magazine está presente e a distribuição de nossas lojas pelas cinco regiões do Brasil.</p>
       </div>
     </section>
 
@@ -308,7 +263,7 @@ table.pe-tabela tfoot td:last-child {
     <section class="section-alt" id="mapa-nacional">
       <div class="container">
         <div class="section-head">
-          <span class="section-eyebrow">Presença Nacional</span>
+          <span class="section-eyebrow">Nossa presença no Brasil</span>
           <h2>Uma rede presente nas cinco regiões do Brasil</h2>
           <p>Mais de 100 lojas em operação, com presença em 14 estados brasileiros.</p>
         </div>
@@ -386,36 +341,26 @@ table.pe-tabela tfoot td:last-child {
           <div class="cr-item">
             <div class="cr-acento"></div>
             <p class="cr-nome">Norte</p>
-            <p class="cr-num">42</p>
-            <p class="cr-label">lojas</p>
             <p class="cr-estados">PA · RO · TO</p>
           </div>
           <div class="cr-item">
             <div class="cr-acento"></div>
             <p class="cr-nome">Nordeste</p>
-            <p class="cr-num">22</p>
-            <p class="cr-label">lojas</p>
             <p class="cr-estados">BA · CE · MA · PE · PI</p>
           </div>
           <div class="cr-item">
             <div class="cr-acento"></div>
             <p class="cr-nome">Centro-Oeste</p>
-            <p class="cr-num">39</p>
-            <p class="cr-label">lojas</p>
             <p class="cr-estados">GO · MS · MT</p>
           </div>
           <div class="cr-item">
             <div class="cr-acento"></div>
             <p class="cr-nome">Sudeste</p>
-            <p class="cr-num">11</p>
-            <p class="cr-label">lojas</p>
             <p class="cr-estados">MG · SP</p>
           </div>
           <div class="cr-item">
             <div class="cr-acento"></div>
             <p class="cr-nome">Sul</p>
-            <p class="cr-num">3</p>
-            <p class="cr-label">lojas</p>
             <p class="cr-estados">PR</p>
           </div>
         </div>
@@ -425,37 +370,27 @@ table.pe-tabela tfoot td:last-child {
     <!-- PRESENÇA POR ESTADO -->
     <section class="section-alt" id="presenca-por-estado">
       <div class="container">
-        <div class="section-head left">
+        <div class="section-head">
           <span class="section-eyebrow">Presença por Estado</span>
-          <h2>Nossa operação em números</h2>
+          <h2>Os 14 estados onde estamos presentes</h2>
           <p>A presença da Sol Magazine se distribui por 14 estados brasileiros, com unidades em diferentes cidades e regiões do país.</p>
         </div>
-        <div class="pe-tabela-wrap">
-          <table class="pe-tabela">
-            <thead>
-              <tr><th>Estado</th><th>Lojas em operação</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Pará (PA)</td><td>31</td></tr>
-              <tr><td>Mato Grosso (MT)</td><td>18</td></tr>
-              <tr><td>Goiás (GO)</td><td>14</td></tr>
-              <tr><td>Bahia (BA)</td><td>11</td></tr>
-              <tr><td>Maranhão (MA)</td><td>8</td></tr>
-              <tr><td>Mato Grosso do Sul (MS)</td><td>7</td></tr>
-              <tr><td>Rondônia (RO)</td><td>7</td></tr>
-              <tr><td>Minas Gerais (MG)</td><td>6</td></tr>
-              <tr><td>São Paulo (SP)</td><td>5</td></tr>
-              <tr><td>Tocantins (TO)</td><td>4</td></tr>
-              <tr><td>Paraná (PR)</td><td>3</td></tr>
-              <tr><td>Ceará (CE)</td><td>1</td></tr>
-              <tr><td>Pernambuco (PE)</td><td>1</td></tr>
-              <tr><td>Piauí (PI)</td><td>1</td></tr>
-            </tbody>
-            <tfoot>
-              <tr><td>Total</td><td>117</td></tr>
-            </tfoot>
-          </table>
-        </div>
+        <ul class="pe-lista">
+          <li>Bahia</li>
+          <li>Ceará</li>
+          <li>Goiás</li>
+          <li>Maranhão</li>
+          <li>Minas Gerais</li>
+          <li>Mato Grosso do Sul</li>
+          <li>Mato Grosso</li>
+          <li>Pará</li>
+          <li>Pernambuco</li>
+          <li>Piauí</li>
+          <li>Paraná</li>
+          <li>Rondônia</li>
+          <li>São Paulo</li>
+          <li>Tocantins</li>
+        </ul>
       </div>
     </section>
 
