@@ -170,103 +170,6 @@
   #perfil-imovel { padding-top: 48px; padding-bottom: 56px; }
 }
 
-/* ----- Processo de avaliação ----- */
-#processo-avaliacao { padding-top: 80px; padding-bottom: 88px; }
-.pa-inner { max-width: 680px; }
-.pa-inner .section-eyebrow {
-  display: block;
-  margin-bottom: 20px;
-}
-.pa-h2 {
-  font-size: clamp(22px, 2.6vw, 34px);
-  line-height: 1.2;
-  color: var(--texto);
-  margin: 0 0 20px;
-}
-.pa-intro {
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--texto-claro);
-  margin: 0;
-}
-.pa-grid {
-  list-style: none;
-  margin: 48px 0 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 48px;
-}
-.pa-item {
-  padding: 24px 0 28px;
-  border-bottom: 1px solid var(--borda);
-}
-.pa-item:nth-child(-n+3) { border-top: 1px solid var(--borda); }
-.pa-num {
-  display: block;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  color: var(--vermelho);
-  margin-bottom: 12px;
-}
-.pa-item-titulo {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.35;
-  color: var(--texto);
-  margin: 0 0 8px;
-}
-.pa-item-texto {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--texto-claro);
-  margin: 0;
-}
-.pa-retorno {
-  max-width: 680px;
-  margin-top: 64px;
-}
-.pa-retorno-titulo {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--texto);
-  margin: 0 0 6px;
-}
-.pa-retorno-texto {
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--texto-claro);
-  margin: 0;
-}
-/* Tablet: 769px–1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .pa-grid {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 40px;
-  }
-  .pa-item:nth-child(3) { border-top: none; }
-}
-/* Mobile: até 768px */
-@media (max-width: 768px) {
-  #processo-avaliacao { padding-top: 56px; padding-bottom: 64px; }
-  .pa-h2 { font-size: clamp(20px, 4.5vw, 28px); }
-  .pa-intro { font-size: 15px; }
-  .pa-grid {
-    grid-template-columns: 1fr;
-    margin-top: 36px;
-  }
-  .pa-item { padding: 20px 0 22px; }
-  .pa-item:nth-child(2),
-  .pa-item:nth-child(3) { border-top: none; }
-  .pa-item-texto,
-  .pa-retorno-texto { font-size: 14.5px; }
-  .pa-retorno { margin-top: 48px; }
-}
-@media (max-width: 480px) {
-  #processo-avaliacao { padding-top: 48px; padding-bottom: 56px; }
-}
-
 /* ----- Formulário ----- */
 #formulario { padding-top: 80px; padding-bottom: 88px; scroll-margin-top: 64px; }
 .fm-wrap { max-width: 800px; margin: 0 auto; }
@@ -321,39 +224,6 @@
   margin: 0;
 }
 .fm-erro[hidden] { display: none; }
-.fm-condicional[hidden] { display: none; }
-/* Grupos Sim/Não */
-.fm-radio {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  min-width: 0;
-}
-.fm-radio legend {
-  font-size: 13.5px;
-  font-weight: 700;
-  padding: 0;
-  margin-bottom: 10px;
-}
-.fm-radio-opcoes { display: flex; gap: 24px; }
-.fm-radio-opcoes label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 40px;
-  font-size: 14.5px;
-  cursor: pointer;
-}
-.fm-radio-opcoes input {
-  width: 18px;
-  height: 18px;
-  margin: 0;
-  accent-color: var(--vermelho);
-}
-.fm-radio-opcoes input:focus-visible {
-  outline: 2px solid var(--vermelho);
-  outline-offset: 2px;
-}
 /* Upload */
 .fm-upload {
   position: relative;
@@ -456,7 +326,7 @@
           <span class="section-eyebrow">Imóveis</span>
           <h1>Estamos em busca de novos pontos comerciais em todo o Brasil.</h1>
           <p>A abertura contínua de novas unidades exige imóveis estratégicos com alto fluxo e boa visibilidade. Se o seu imóvel tem esse perfil, queremos conhecer.</p>
-          <a href="#formulario" class="btn btn-primary">Enviar meu imóvel &rarr;</a>
+          <a href="#formulario" class="btn btn-primary">Enviar meu imóvel</a>
         </div>
       </div>
     </section>
@@ -466,9 +336,9 @@
       <div class="container">
         <div class="pq-inner">
           <span class="section-eyebrow">Por que indicar seu imóvel</span>
-          <h2 class="pq-titulo">Uma relação comercial construída para acompanhar a operação da loja</h2>
-          <p class="pq-texto">A Sol Magazine busca imóveis para implantação de novas unidades em diferentes regiões do país. A relação com proprietários e administradores faz parte desse processo, desde a análise do ponto até a implantação da operação.</p>
-          <p class="pq-texto">Cada imóvel é avaliado de acordo com critérios de localização, estrutura e viabilidade comercial, buscando condições adequadas para a instalação e permanência da unidade.</p>
+          <h2 class="pq-titulo">Apresente seu imóvel a uma rede nacional em expansão</h2>
+          <p class="pq-texto">A Sol Magazine é uma rede brasileira de varejo popular, com mais de 100 lojas em operação em 14 estados brasileiros, e segue ampliando sua presença em todo o país.</p>
+          <p class="pq-texto">Proprietários, corretores e imobiliárias podem apresentar pontos comerciais com potencial para receber novas unidades e iniciar um relacionamento comercial com uma rede nacional de varejo.</p>
         </div>
       </div>
     </section>
@@ -479,7 +349,7 @@
         <div class="pf-inner">
           <span class="section-eyebrow">Perfil do imóvel desejado</span>
           <h2 class="pf-h2">O que buscamos em um novo ponto comercial</h2>
-          <p class="pf-intro">Estes são os principais critérios considerados na análise de novos imóveis. Cada oportunidade é avaliada de acordo com sua localização e características.</p>
+          <p class="pf-intro">Estas são as principais características que buscamos em um novo ponto comercial. As metragens indicadas são referências, não requisitos: imóveis com características diferentes também podem ser apresentados.</p>
         </div>
         <ul class="pf-grid">
           <li class="pf-item">
@@ -488,7 +358,7 @@
           </li>
           <li class="pf-item">
             <h3 class="pf-item-titulo">Área adequada à operação</h3>
-            <p class="pf-item-texto">A área de vendas no térreo deve ter aproximadamente 300 m². Como referência, buscamos imóveis com aproximadamente 500 m² de área total.</p>
+            <p class="pf-item-texto">Como referência, buscamos imóveis com aproximadamente 300 m² de área de vendas no térreo e aproximadamente 500 m² de área total. Imóveis com metragens diferentes também podem ser apresentados.</p>
           </li>
           <li class="pf-item">
             <h3 class="pf-item-titulo">Bom fluxo de consumidores</h3>
@@ -510,85 +380,32 @@
       </div>
     </section>
 
-    <!-- PROCESSO DE AVALIAÇÃO -->
-    <section class="section-alt" id="processo-avaliacao">
-      <div class="container">
-        <div class="pa-inner">
-          <span class="section-eyebrow">Processo de avaliação</span>
-          <h2 class="pa-h2">Como avaliamos cada imóvel oferecido</h2>
-          <p class="pa-intro">Cada imóvel passa por etapas de análise antes de uma eventual locação. O processo começa com informações básicas e avança conforme o interesse e a viabilidade da oportunidade.</p>
-        </div>
-        <ol class="pa-grid">
-          <li class="pa-item">
-            <span class="pa-num">01</span>
-            <h3 class="pa-item-titulo">Envio do imóvel</h3>
-            <p class="pa-item-texto">O ofertante cadastra as informações iniciais do imóvel. Fotos e informações complementares podem ser enviadas posteriormente.</p>
-          </li>
-          <li class="pa-item">
-            <span class="pa-num">02</span>
-            <h3 class="pa-item-titulo">Análise inicial</h3>
-            <p class="pa-item-texto">A Sol Magazine avalia a localização e as características básicas do imóvel para verificar sua aderência ao perfil da operação.</p>
-          </li>
-          <li class="pa-item">
-            <span class="pa-num">03</span>
-            <h3 class="pa-item-titulo">Contato e informações complementares</h3>
-            <p class="pa-item-texto">Havendo interesse inicial, entramos em contato para solicitar informações adicionais, como fotos, planta e outros dados necessários à análise.</p>
-          </li>
-          <li class="pa-item">
-            <span class="pa-num">04</span>
-            <h3 class="pa-item-titulo">Avaliação comercial preliminar</h3>
-            <p class="pa-item-texto">São analisadas as condições comerciais e eventuais necessidades relevantes de adequação do imóvel antes de avançarmos para uma visita.</p>
-          </li>
-          <li class="pa-item">
-            <span class="pa-num">05</span>
-            <h3 class="pa-item-titulo">Visita técnica</h3>
-            <p class="pa-item-texto">Se a oportunidade continuar viável, é realizada uma avaliação presencial do imóvel e de suas condições para a operação.</p>
-          </li>
-          <li class="pa-item">
-            <span class="pa-num">06</span>
-            <h3 class="pa-item-titulo">Negociação e formalização</h3>
-            <p class="pa-item-texto">Confirmada a viabilidade, avançamos para a negociação das condições finais e, havendo acordo entre as partes, para a formalização da locação.</p>
-          </li>
-        </ol>
-        <div class="pa-retorno">
-          <p class="pa-retorno-titulo">Retorno ao ofertante</p>
-          <p class="pa-retorno-texto">Caso a oportunidade não avance, o ofertante também será informado, preservando o imóvel para eventual análise futura.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- FORMULÁRIO -->
-    <section class="section-tinted" id="formulario">
+    <section class="section-alt" id="formulario">
       <div class="container">
         <div class="fm-wrap">
           <div class="fm-head">
             <span class="section-eyebrow">Envie um imóvel</span>
             <h2 class="fm-h2">Tem um imóvel que pode receber uma Sol Magazine?</h2>
-            <p class="fm-intro">Preencha as informações abaixo para que nossa equipe faça uma primeira análise. O cadastro é simples e, se necessário, solicitaremos informações complementares posteriormente.</p>
+            <p class="fm-intro">Preencha as informações abaixo para apresentar seu imóvel à Sol Magazine. Apenas os dados de contato e a localização são obrigatórios.</p>
           </div>
           <div class="fm-corpo">
             <form data-prototype-form id="fm-imovel">
               <p class="fm-obrigatorios">Campos marcados com * são obrigatórios.</p>
 
-              <div class="fm-grupo" role="group" aria-labelledby="fm-grupo-contato">
-                <h3 class="fm-grupo-titulo" id="fm-grupo-contato">Dados para contato</h3>
+              <div class="fm-grupo" role="group" aria-labelledby="fm-grupo-responsavel">
+                <h3 class="fm-grupo-titulo" id="fm-grupo-responsavel">Dados do responsável</h3>
                 <div class="form-grid">
                   <div class="form-field"><label for="im-nome">Nome<span class="fm-req" aria-hidden="true">*</span></label><input id="im-nome" name="nome" type="text" autocomplete="name" required></div>
                   <div class="form-field"><label for="im-telefone">Telefone / WhatsApp<span class="fm-req" aria-hidden="true">*</span></label><input id="im-telefone" name="telefone" type="tel" autocomplete="tel" required></div>
-                  <div class="form-field"><label for="im-email">E-mail</label><input id="im-email" name="email" type="email" autocomplete="email"></div>
-                  <div class="form-field"><label for="im-perfil">Você é?<span class="fm-req" aria-hidden="true">*</span></label>
-                    <select id="im-perfil" name="perfil_ofertante" required>
+                  <div class="form-field"><label for="im-perfil">Identificação</label>
+                    <select id="im-perfil" name="identificacao">
                       <option value="">Selecione</option>
                       <option>Proprietário</option>
                       <option>Corretor</option>
                       <option>Imobiliária</option>
-                      <option>Administrador</option>
                       <option>Outro</option>
                     </select>
-                  </div>
-                  <div class="form-field full fm-condicional" id="im-relacao-campo" hidden>
-                    <label for="im-relacao">Informe sua relação com o imóvel<span class="fm-req" aria-hidden="true">*</span></label>
-                    <input id="im-relacao" name="relacao_imovel" type="text">
                   </div>
                 </div>
               </div>
@@ -629,44 +446,25 @@
                     </select>
                   </div>
                   <div class="form-field"><label for="im-cidade">Cidade<span class="fm-req" aria-hidden="true">*</span></label><input id="im-cidade" name="cidade" type="text" required></div>
-                  <div class="form-field"><label for="im-bairro">Bairro / Região</label><input id="im-bairro" name="bairro" type="text"></div>
-                  <div class="form-field"><label for="im-endereco">Endereço completo</label><input id="im-endereco" name="endereco" type="text" autocomplete="street-address"></div>
-                  <div class="form-field full">
-                    <label for="im-maps">Link do Google Maps</label>
-                    <input id="im-maps" name="google_maps" type="url" placeholder="https://maps.google.com/..." aria-describedby="im-maps-ajuda">
-                    <p class="fm-ajuda" id="im-maps-ajuda">Cole aqui o link da localização do imóvel, se tiver.</p>
-                  </div>
-                  <div class="form-field"><label for="im-area-terreo">Área do térreo (m²)<span class="fm-req" aria-hidden="true">*</span></label><input id="im-area-terreo" name="area_terreo" type="number" min="1" step="any" inputmode="decimal" required></div>
+                  <div class="form-field"><label for="im-bairro">Bairro</label><input id="im-bairro" name="bairro" type="text"></div>
+                  <div class="form-field"><label for="im-endereco">Endereço do imóvel</label><input id="im-endereco" name="endereco" type="text" autocomplete="street-address"></div>
+                  <div class="form-field"><label for="im-area-terreo">Área do térreo (m²)</label><input id="im-area-terreo" name="area_terreo" type="number" min="1" step="any" inputmode="decimal"></div>
                   <div class="form-field">
-                    <label for="im-area-total">Área total do imóvel (m²)<span class="fm-req" aria-hidden="true">*</span></label>
-                    <input id="im-area-total" name="area_total" type="number" min="1" step="any" inputmode="decimal" required aria-describedby="im-area-erro">
+                    <label for="im-area-total">Área total do imóvel (m²)</label>
+                    <input id="im-area-total" name="area_total" type="number" min="1" step="any" inputmode="decimal" aria-describedby="im-area-erro">
                     <p class="fm-erro" id="im-area-erro" hidden>A área total não pode ser menor que a área do térreo.</p>
                   </div>
-                  <fieldset class="fm-radio">
-                    <legend>O imóvel possui acesso direto pela rua?<span class="fm-req" aria-hidden="true">*</span></legend>
-                    <div class="fm-radio-opcoes">
-                      <label><input type="radio" name="acesso_rua" value="Sim" required> Sim</label>
-                      <label><input type="radio" name="acesso_rua" value="Não" required> Não</label>
-                    </div>
-                  </fieldset>
-                  <fieldset class="fm-radio">
-                    <legend>Possui sobreloja?</legend>
-                    <div class="fm-radio-opcoes">
-                      <label><input type="radio" name="sobreloja" value="Sim"> Sim</label>
-                      <label><input type="radio" name="sobreloja" value="Não"> Não</label>
-                    </div>
-                  </fieldset>
                   <div class="form-field"><label for="im-aluguel">Valor pretendido do aluguel mensal (R$)</label><input id="im-aluguel" name="aluguel_mensal" type="text" inputmode="decimal"></div>
-                  <div class="form-field full"><label for="im-info">Informações adicionais</label><textarea id="im-info" name="informacoes_adicionais" rows="4" placeholder="Conte-nos alguma informação que considere importante sobre o imóvel."></textarea></div>
                   <div class="form-field full">
                     <label for="im-fotos">Fotos do imóvel (opcional)</label>
-                    <p class="fm-ajuda" id="im-fotos-ajuda">Se desejar, envie fotos do imóvel. Elas também poderão ser solicitadas posteriormente durante a análise.</p>
+                    <p class="fm-ajuda" id="im-fotos-ajuda">Se desejar, selecione fotos do imóvel. No protótipo, as fotos ficam apenas no seu navegador e não são enviadas.</p>
                     <label class="fm-upload">
                       <span aria-hidden="true">Selecionar fotos</span>
                       <input id="im-fotos" name="fotos" type="file" multiple accept="image/*" aria-describedby="im-fotos-ajuda im-fotos-nome">
                     </label>
                     <p class="fm-upload-nome" id="im-fotos-nome" aria-live="polite"></p>
                   </div>
+                  <div class="form-field full"><label for="im-info">Informações complementares</label><textarea id="im-info" name="informacoes_complementares" rows="4" placeholder="Conte-nos alguma informação que considere importante sobre o imóvel."></textarea></div>
                 </div>
               </div>
 
@@ -678,8 +476,8 @@
             </form>
             <div role="status" aria-live="polite">
               <div class="form-success">
-                <p>Imóvel enviado para avaliação.</p>
-                <p>Nossa equipe analisará as informações e dará retorno ao contato informado. Caso seja necessário, poderemos solicitar informações complementares durante a análise.</p>
+                <p>Simulação concluída.</p>
+                <p>Este formulário é um protótipo: nenhuma informação foi enviada ou armazenada.</p>
               </div>
             </div>
           </div>
@@ -736,26 +534,16 @@
   </footer>
   <script src="script.js"></script>
   <script>
-  // Formulário de imóveis: campo condicional, validação das áreas, fotos e mensagem de sucesso
+  // Formulário de imóveis: validação das áreas, fotos e mensagem do envio simulado
   (function () {
     var form = document.getElementById('fm-imovel');
     if (!form) return;
     var sucesso = form.parentElement.querySelector('.form-success');
-    var perfil = document.getElementById('im-perfil');
-    var relacaoCampo = document.getElementById('im-relacao-campo');
-    var relacao = document.getElementById('im-relacao');
     var terreo = document.getElementById('im-area-terreo');
     var total = document.getElementById('im-area-total');
     var areaErro = document.getElementById('im-area-erro');
     var fotos = document.getElementById('im-fotos');
     var fotosNome = document.getElementById('im-fotos-nome');
-
-    function atualizarRelacao() {
-      var outro = perfil.value === 'Outro';
-      relacaoCampo.hidden = !outro;
-      relacao.required = outro;
-      if (!outro) relacao.value = '';
-    }
 
     function validarAreas() {
       var t = parseFloat(terreo.value), a = parseFloat(total.value);
@@ -764,7 +552,6 @@
       areaErro.hidden = !invalido;
     }
 
-    perfil.addEventListener('change', atualizarRelacao);
     terreo.addEventListener('input', validarAreas);
     total.addEventListener('input', validarAreas);
 
@@ -782,7 +569,6 @@
     form.addEventListener('reset', function () {
       setTimeout(function () {
         fotosNome.textContent = '';
-        atualizarRelacao();
         validarAreas();
       }, 0);
     });
