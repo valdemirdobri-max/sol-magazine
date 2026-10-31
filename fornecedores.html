@@ -9,35 +9,55 @@
 /* ===== FORNECEDORES — CSS SCOPED ===== */
 
 /* ----- Hero: bloco fotográfico ----- */
-/* PENDENTE: foto do Hero ainda não homologada (EXIGE DECISÃO DO GESTOR — FOTO DO HERO).
-   Ao receber os assets homologados, aplicar background-image em cada faixa abaixo,
-   no mesmo padrão de imoveis.html (desktop / tablet / mobile), e remover a área neutra. */
+/* PROVISÓRIO: fotografia real enviada pelo gestor (IMG_8339), recortada abaixo do mezanino.
+   Substituir antes da publicação e remover a tarja .fo-tarja-provisoria. */
 #hero-fornecedores-foto {
+  position: relative;
   width: 100%;
   height: 540px;
   background-color: #ece4e2;
+  background-image: url('assets/images/hero-fornecedores-desktop.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 /* Tablet: 481px–1024px */
 @media (min-width: 481px) and (max-width: 1024px) {
-  #hero-fornecedores-foto { height: 440px; }
+  #hero-fornecedores-foto {
+    background-image: url('assets/images/hero-fornecedores-tablet.jpg');
+    height: 440px;
+  }
 }
 /* Mobile: até 480px */
 @media (max-width: 480px) {
-  #hero-fornecedores-foto { height: 460px; }
+  #hero-fornecedores-foto {
+    background-image: url('assets/images/hero-fornecedores-mobile.jpg');
+    height: 460px;
+  }
 }
-.fo-foto-pendente {
-  margin: 0;
-  padding: 0 24px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--texto-claro);
-  text-align: center;
+/* Tarja de imagem provisória (elemento independente da fotografia) */
+.fo-tarja-provisoria {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  max-width: calc(100% - 32px);
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(20, 10, 10, 0.72);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  .fo-tarja-provisoria {
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100% - 24px);
+    font-size: 10.5px;
+    padding: 5px 10px;
+  }
 }
 
 /* ----- Hero: bloco editorial ----- */
@@ -75,8 +95,7 @@
 
 /* ----- Seções editoriais (cabeçalho comum) ----- */
 #por-que-fornecer,
-#categorias-compradas,
-#criterios-comerciais { padding-top: 80px; padding-bottom: 88px; }
+#categorias-compradas { padding-top: 80px; padding-bottom: 88px; }
 .fo-head { max-width: 680px; }
 .fo-head .section-eyebrow {
   display: block;
@@ -96,7 +115,7 @@
   margin: 0;
 }
 
-/* ----- Listas editoriais (fundamentos, categorias, critérios) ----- */
+/* ----- Listas editoriais (fundamentos e categorias) ----- */
 .fo-lista {
   list-style: none;
   margin: 48px 0 0;
@@ -105,13 +124,11 @@
   column-gap: 48px;
 }
 .fo-lista-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.fo-lista-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; }
 .fo-item {
   padding: 24px 0 28px;
   border-bottom: 1px solid var(--borda);
 }
-.fo-lista-3 .fo-item:nth-child(-n+3),
-.fo-lista-2 .fo-item:nth-child(-n+2) { border-top: 1px solid var(--borda); }
+.fo-lista-3 .fo-item:nth-child(-n+3) { border-top: 1px solid var(--borda); }
 .fo-num {
   display: block;
   font-size: 14px;
@@ -144,30 +161,25 @@
     column-gap: 40px;
   }
   .fo-lista-3 .fo-item:nth-child(3) { border-top: none; }
-  .fo-lista-2 { column-gap: 40px; }
 }
 /* Mobile: até 768px */
 @media (max-width: 768px) {
   #por-que-fornecer,
-  #categorias-compradas,
-  #criterios-comerciais { padding-top: 56px; padding-bottom: 64px; }
+  #categorias-compradas { padding-top: 56px; padding-bottom: 64px; }
   .fo-h2 { font-size: clamp(20px, 4.5vw, 28px); }
   .fo-intro { font-size: 15px; }
-  .fo-lista-3,
-  .fo-lista-2 {
+  .fo-lista-3 {
     grid-template-columns: minmax(0, 1fr);
     margin-top: 36px;
   }
   .fo-item { padding: 20px 0 22px; }
   .fo-lista-3 .fo-item:nth-child(2),
-  .fo-lista-3 .fo-item:nth-child(3),
-  .fo-lista-2 .fo-item:nth-child(2) { border-top: none; }
+  .fo-lista-3 .fo-item:nth-child(3) { border-top: none; }
   .fo-item-texto { font-size: 14.5px; }
 }
 @media (max-width: 480px) {
   #por-que-fornecer,
-  #categorias-compradas,
-  #criterios-comerciais { padding-top: 48px; padding-bottom: 56px; }
+  #categorias-compradas { padding-top: 48px; padding-bottom: 56px; }
 }
 
 /* ----- Formulário ----- */
@@ -365,10 +377,9 @@
   </header>
 
   <main>
-    <!-- HERO: bloco fotográfico — área neutra provisória.
-         EXIGE DECISÃO DO GESTOR — FOTO DO HERO (asset ainda não homologado). -->
-    <div id="hero-fornecedores-foto" aria-hidden="true">
-      <p class="fo-foto-pendente">Área reservada para a foto do Hero — imagem pendente</p>
+    <!-- HERO: bloco fotográfico — fotografia provisória; substituir antes da publicação -->
+    <div id="hero-fornecedores-foto" role="img" aria-label="Interior de uma loja Sol Magazine com araras de roupas e acessórios">
+      <span class="fo-tarja-provisoria">IMAGEM PROVISÓRIA — SUBSTITUIR ANTES DA PUBLICAÇÃO</span>
     </div>
 
     <!-- HERO: bloco editorial -->
@@ -377,8 +388,8 @@
         <div class="fo-editorial-inner">
           <span class="section-eyebrow">Fornecedores</span>
           <h1>Sua empresa pode fornecer para uma rede com mais de 100 lojas.</h1>
-          <p>Buscamos fornecedores preparados para atender uma operação de varejo em escala, com presença em diferentes regiões do Brasil e produtos cujo custo de fornecimento permita sua comercialização dentro do nosso modelo de preço único de venda a R$ 20,00.</p>
-          <a href="#formulario" class="btn btn-primary">Cadastrar minha empresa &rarr;</a>
+          <p>Com lojas em 14 estados brasileiros e um mix diversificado de produtos para o varejo popular, a Sol Magazine busca fabricantes, distribuidores e fornecedores interessados em estabelecer relações comerciais com a rede.</p>
+          <a href="#formulario" class="btn btn-primary">Apresente sua empresa</a>
         </div>
       </div>
     </section>
@@ -425,7 +436,7 @@
           </li>
           <li class="fo-item">
             <h3 class="fo-item-titulo">Calçados e Acessórios</h3>
-            <p class="fo-item-texto"><span class="fo-abrange">Abrange:</span> chinelos, Crocs e similares, bolsas, mochilas, cintos, bonés, chapéus, óculos, meias, toucas, luvas e acessórios de moda.</p>
+            <p class="fo-item-texto"><span class="fo-abrange">Abrange:</span> chinelos, calçados casuais, bolsas, mochilas, cintos, bonés, chapéus, óculos, meias, toucas, luvas e acessórios de moda.</p>
           </li>
           <li class="fo-item">
             <h3 class="fo-item-titulo">Cama, Mesa e Banho</h3>
@@ -447,47 +458,14 @@
       </div>
     </section>
 
-    <!-- CRITÉRIOS COMERCIAIS -->
-    <section class="section-alt" id="criterios-comerciais">
-      <div class="container">
-        <div class="fo-head">
-          <span class="section-eyebrow">Critérios comerciais</span>
-          <h2 class="fo-h2">O que avaliamos em nossos fornecedores</h2>
-          <p class="fo-intro">Nosso modelo comercial tem uma característica fundamental: os produtos são vendidos em nossas lojas pelo preço único de R$ 20,00. Por isso, antes de apresentar sua empresa, verifique se seus produtos e suas condições comerciais são compatíveis com esse modelo.</p>
-        </div>
-        <ol class="fo-lista fo-lista-2">
-          <li class="fo-item">
-            <span class="fo-num">01</span>
-            <h3 class="fo-item-titulo">Condição comercial compatível com nosso modelo</h3>
-            <p class="fo-item-texto">Este é um critério essencial. Trabalhamos com preço único de venda de R$ 20,00. Por isso, avaliamos o custo efetivo da mercadoria, as condições de pagamento e os aspectos tributários da operação para verificar sua compatibilidade com nosso modelo comercial.</p>
-          </li>
-          <li class="fo-item">
-            <span class="fo-num">02</span>
-            <h3 class="fo-item-titulo">Produto adequado ao nosso público</h3>
-            <p class="fo-item-texto">Avaliamos qualidade, apresentação, funcionalidade e potencial comercial do produto para o perfil de consumidores atendidos pela Sol Magazine.</p>
-          </li>
-          <li class="fo-item">
-            <span class="fo-num">03</span>
-            <h3 class="fo-item-titulo">Capacidade de fornecimento e logística</h3>
-            <p class="fo-item-texto">Consideramos a capacidade de atender volumes compatíveis com nossa operação, regularidade de fornecimento e condições de entrega nas regiões atendidas pela rede.</p>
-          </li>
-          <li class="fo-item">
-            <span class="fo-num">04</span>
-            <h3 class="fo-item-titulo">Regularidade cadastral e comercial</h3>
-            <p class="fo-item-texto">A empresa e a documentação necessária à relação comercial devem estar regulares para o processo de cadastro e eventual fornecimento.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
     <!-- QUERO FORNECER + FORMULÁRIO -->
-    <section class="section-tinted" id="formulario">
+    <section class="section-alt" id="formulario">
       <div class="container">
         <div class="fo-form-wrap">
           <div class="fo-form-head fo-head">
             <span class="section-eyebrow">Quero fornecer</span>
             <h2 class="fo-h2">Apresente sua empresa e seus produtos para a Sol Magazine</h2>
-            <p class="fo-form-intro">Preencha o cadastro com as principais informações da sua empresa e dos produtos que deseja apresentar. Os dados serão encaminhados à nossa equipe responsável por compras, que poderá entrar em contato caso seja necessário conhecer melhor a oportunidade.</p>
+            <p class="fo-form-intro">Envie as principais informações da sua empresa e dos produtos que deseja apresentar. Este é um primeiro contato de interesse comercial e não constitui cadastro como fornecedor.</p>
           </div>
           <div class="fo-form-corpo">
             <form data-prototype-form id="fo-fornecedor">
@@ -500,7 +478,6 @@
                   <div class="form-field"><label for="fo-razao">Razão social<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-razao" name="razao_social" type="text" autocomplete="organization" required></div>
                   <div class="form-field"><label for="fo-fantasia">Nome fantasia</label><input id="fo-fantasia" name="nome_fantasia" type="text"></div>
                   <div class="form-field"><label for="fo-cnpj">CNPJ<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-cnpj" name="cnpj" type="text" inputmode="numeric" placeholder="00.000.000/0000-00" required aria-describedby="fo-cnpj-erro"><p class="fo-erro" id="fo-cnpj-erro" hidden>Informe o CNPJ completo, com 14 dígitos.</p></div>
-                  <div class="form-field"><label for="fo-cidade">Cidade<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-cidade" name="cidade" type="text" autocomplete="address-level2" required></div>
                   <div class="form-field"><label for="fo-estado">Estado<span class="fo-req" aria-hidden="true">*</span></label>
                     <select id="fo-estado" name="estado" required>
                       <option value="">Selecione</option>
@@ -533,7 +510,7 @@
                       <option>TO</option>
                     </select>
                   </div>
-                  <div class="form-field"><label for="fo-site">Site, catálogo online ou rede social</label><input id="fo-site" name="site_catalogo_rede" type="text"></div>
+                  <div class="form-field"><label for="fo-cidade">Cidade<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-cidade" name="cidade" type="text" autocomplete="address-level2" required></div>
                 </div>
               </div>
 
@@ -542,7 +519,6 @@
                 <h3 class="fo-grupo-titulo" id="fo-grupo-contato">Contato</h3>
                 <div class="form-grid">
                   <div class="form-field"><label for="fo-responsavel">Nome do responsável<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-responsavel" name="nome_responsavel" type="text" autocomplete="name" required></div>
-                  <div class="form-field"><label for="fo-cargo">Cargo/Função</label><input id="fo-cargo" name="cargo_funcao" type="text" autocomplete="organization-title"></div>
                   <div class="form-field"><label for="fo-telefone">WhatsApp/Telefone<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-telefone" name="whatsapp_telefone" type="tel" autocomplete="tel" required></div>
                   <div class="form-field"><label for="fo-email">E-mail<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-email" name="email" type="email" autocomplete="email" required></div>
                 </div>
@@ -553,7 +529,7 @@
                 <h3 class="fo-grupo-titulo" id="fo-grupo-produtos">Produtos</h3>
                 <div class="form-grid">
                   <fieldset class="fo-checks" aria-describedby="fo-categorias-erro">
-                    <legend>Categorias fornecidas<span class="fo-req" aria-hidden="true">*</span></legend>
+                    <legend>Categorias de produtos fornecidos<span class="fo-req" aria-hidden="true">*</span></legend>
                     <div class="fo-checks-opcoes">
                       <label><input type="checkbox" name="categorias" value="Moda e Confecções"> Moda e Confecções</label>
                       <label><input type="checkbox" name="categorias" value="Calçados e Acessórios"> Calçados e Acessórios</label>
@@ -565,18 +541,19 @@
                     <p class="fo-erro" id="fo-categorias-erro" hidden>Selecione ao menos uma categoria.</p>
                   </fieldset>
                   <div class="form-field full"><label for="fo-descricao">Breve descrição dos produtos<span class="fo-req" aria-hidden="true">*</span></label><textarea id="fo-descricao" name="descricao_produtos" rows="4" required></textarea></div>
-                  <div class="form-field full"><label for="fo-marcas">Marcas próprias ou representadas</label><input id="fo-marcas" name="marcas" type="text"></div>
                   <div class="form-field full">
-                    <label for="fo-catalogo">Catálogo ou apresentação da empresa</label>
+                    <label for="fo-catalogo">Catálogo ou apresentação da empresa (opcional)</label>
                     <label class="fo-upload">
                       <span aria-hidden="true">Selecionar arquivo</span>
-                      <input id="fo-catalogo" name="catalogo_apresentacao" type="file" aria-describedby="fo-catalogo-nome">
+                      <input id="fo-catalogo" name="catalogo_apresentacao" type="file" accept="application/pdf,image/jpeg,image/png,image/webp,.pdf,.jpg,.jpeg,.png,.webp" aria-describedby="fo-catalogo-regras fo-catalogo-nome fo-catalogo-erro">
                     </label>
+                    <p class="fo-ajuda" id="fo-catalogo-regras">Um arquivo, nos formatos PDF, JPG, PNG ou WebP, com no máximo 10 MB.</p>
                     <p class="fo-upload-nome" id="fo-catalogo-nome" aria-live="polite"></p>
+                    <p class="fo-erro" id="fo-catalogo-erro" aria-live="polite" hidden></p>
                   </div>
                   <div class="form-field full">
-                    <label for="fo-fotos">Fotos dos produtos</label>
-                    <p class="fo-ajuda" id="fo-fotos-ajuda">Envie até 5 fotos representativas dos principais produtos que sua empresa deseja apresentar.</p>
+                    <label for="fo-fotos">Fotos dos produtos (opcional)</label>
+                    <p class="fo-ajuda" id="fo-fotos-ajuda">Se desejar, selecione até 5 fotos representativas dos principais produtos que sua empresa deseja apresentar.</p>
                     <label class="fo-upload">
                       <span aria-hidden="true">Selecionar fotos</span>
                       <input id="fo-fotos" name="fotos_produtos" type="file" multiple accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" aria-describedby="fo-fotos-ajuda fo-fotos-regras fo-fotos-nome fo-fotos-erro">
@@ -588,62 +565,11 @@
                 </div>
               </div>
 
-              <!-- D) CONDIÇÕES COMERCIAIS -->
-              <div class="fo-grupo" role="group" aria-labelledby="fo-grupo-comercial">
-                <h3 class="fo-grupo-titulo" id="fo-grupo-comercial">Condições comerciais</h3>
-                <div class="form-grid">
-                  <div class="form-field"><label for="fo-regime">Regime tributário<span class="fo-req" aria-hidden="true">*</span></label>
-                    <select id="fo-regime" name="regime_tributario" required>
-                      <option value="">Selecione</option>
-                      <option>Simples Nacional</option>
-                      <option>Lucro Presumido</option>
-                      <option>Lucro Real</option>
-                      <option>Outro</option>
-                    </select>
-                  </div>
-                  <div class="form-field"><label for="fo-prazo">Prazo de pagamento praticado<span class="fo-req" aria-hidden="true">*</span></label><input id="fo-prazo" name="prazo_pagamento" type="text" required></div>
-                  <div class="form-field full">
-                    <label for="fo-capacidade">Capacidade de fornecimento</label>
-                    <p class="fo-ajuda" id="fo-capacidade-ajuda">Informe, se desejar, sua capacidade aproximada de atendimento ou outras informações relevantes sobre sua produção.</p>
-                    <textarea id="fo-capacidade" name="capacidade_fornecimento" rows="3" aria-describedby="fo-capacidade-ajuda"></textarea>
-                  </div>
-                  <div class="form-field full">
-                    <label for="fo-regioes">Regiões atendidas</label>
-                    <p class="fo-ajuda" id="fo-regioes-ajuda">Informe as regiões ou estados para os quais sua empresa possui capacidade de fornecimento.</p>
-                    <input id="fo-regioes" name="regioes_atendidas" type="text" aria-describedby="fo-regioes-ajuda">
-                  </div>
-                </div>
-              </div>
-
-              <!-- E) LOGÍSTICA -->
-              <div class="fo-grupo" role="group" aria-labelledby="fo-grupo-logistica">
-                <h3 class="fo-grupo-titulo" id="fo-grupo-logistica">Logística</h3>
-                <div class="form-grid">
-                  <div class="form-field"><label for="fo-transporte">Forma de transporte<span class="fo-req" aria-hidden="true">*</span></label>
-                    <select id="fo-transporte" name="forma_transporte" required>
-                      <option value="">Selecione</option>
-                      <option>Transporte próprio</option>
-                      <option>Transportadora contratada pelo fornecedor</option>
-                      <option>Transporte contratado pelo comprador</option>
-                      <option>A combinar</option>
-                    </select>
-                  </div>
-                  <div class="form-field"><label for="fo-frete">Condição de frete praticada<span class="fo-req" aria-hidden="true">*</span></label>
-                    <select id="fo-frete" name="condicao_frete" required>
-                      <option value="">Selecione</option>
-                      <option>Mercadoria entregue com frete incluso</option>
-                      <option>Frete por conta do comprador</option>
-                      <option>Depende da negociação/pedido</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- F) COMPLEMENTO -->
+              <!-- D) COMPLEMENTO -->
               <div class="fo-grupo" role="group" aria-labelledby="fo-grupo-complemento">
                 <h3 class="fo-grupo-titulo" id="fo-grupo-complemento">Complemento</h3>
                 <div class="form-grid">
-                  <div class="form-field full"><label for="fo-info">Informações adicionais</label><textarea id="fo-info" name="informacoes_adicionais" rows="4"></textarea></div>
+                  <div class="form-field full"><label for="fo-info">Informações complementares</label><textarea id="fo-info" name="informacoes_complementares" rows="4"></textarea></div>
                 </div>
               </div>
 
@@ -655,8 +581,8 @@
             </form>
             <div role="status" aria-live="polite">
               <div class="form-success">
-                <p>Informações recebidas.</p>
-                <p>Os dados da sua empresa foram encaminhados para nossa equipe responsável por compras e poderão ser utilizados para contato sobre oportunidades de fornecimento.</p>
+                <p>Simulação concluída.</p>
+                <p>Este formulário é um protótipo: nenhuma informação foi enviada ou armazenada.</p>
               </div>
             </div>
           </div>
@@ -713,7 +639,7 @@
   </footer>
   <script src="script.js"></script>
   <script>
-  // Formulário de fornecedores (protótipo): categorias obrigatórias, regras das fotos e mensagem de sucesso
+  // Formulário de fornecedores (protótipo): categorias obrigatórias, regras dos arquivos e mensagem do envio simulado
   (function () {
     var form = document.getElementById('fo-fornecedor');
     if (!form) return;
@@ -722,6 +648,7 @@
     var categoriasErro = document.getElementById('fo-categorias-erro');
     var catalogo = document.getElementById('fo-catalogo');
     var catalogoNome = document.getElementById('fo-catalogo-nome');
+    var catalogoErro = document.getElementById('fo-catalogo-erro');
     var fotos = document.getElementById('fo-fotos');
     var fotosNome = document.getElementById('fo-fotos-nome');
     var fotosErro = document.getElementById('fo-fotos-erro');
@@ -790,9 +717,24 @@
     }
     fotos.addEventListener('change', validarFotos);
 
-    catalogo.addEventListener('change', function () {
-      catalogoNome.textContent = catalogo.files.length ? 'Arquivo selecionado: ' + catalogo.files[0].name : '';
-    });
+    // Catálogo: um arquivo PDF/JPG/PNG/WebP, até 10 MB (validação apenas no navegador)
+    var CATALOGO_MAX_BYTES = 10 * 1024 * 1024;
+    var CATALOGO_TIPOS = ['application/pdf', 'image/jpeg', 'image/png', 'image/webp'];
+    var CATALOGO_EXTENSOES = /\.(pdf|jpe?g|png|webp)$/i;
+    function validarCatalogo() {
+      var arquivo = catalogo.files[0];
+      var msg = '';
+      if (arquivo && CATALOGO_TIPOS.indexOf(arquivo.type) === -1 && !CATALOGO_EXTENSOES.test(arquivo.name)) {
+        msg = 'Envie o catálogo nos formatos PDF, JPG, PNG ou WebP.';
+      } else if (arquivo && arquivo.size > CATALOGO_MAX_BYTES) {
+        msg = 'O catálogo deve ter no máximo 10 MB.';
+      }
+      catalogo.setCustomValidity(msg);
+      catalogoErro.textContent = msg;
+      catalogoErro.hidden = !msg;
+      catalogoNome.textContent = arquivo ? 'Arquivo selecionado: ' + arquivo.name : '';
+    }
+    catalogo.addEventListener('change', validarCatalogo);
 
     // Novo preenchimento oculta a mensagem de um envio anterior
     function ocultarSucesso() { if (sucesso) sucesso.classList.remove('show'); }
@@ -802,7 +744,7 @@
     // Após o reset (feito pelo envio simulado em script.js), restaura o estado inicial
     form.addEventListener('reset', function () {
       setTimeout(function () {
-        catalogoNome.textContent = '';
+        validarCatalogo();
         validarFotos();
         validarCategorias(false);
         categoriasErro.hidden = true;
